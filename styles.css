@@ -796,6 +796,15 @@ h3 {
         flex-direction: column;
         gap: 15px;
     }
+
+    .intro-text {
+        padding: 20px;
+    }
+
+    .intro-header {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
 }
 
 /* Scrollbar personnalisée */
@@ -815,4 +824,202 @@ h3 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #2980b9, #3498db);
+}
+
+/* Styles pour les intros déroulantes */
+.intro-dropdown {
+    background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+    border: 2px solid #2196f3;
+    border-radius: 10px;
+    margin: 20px 0 30px 0;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(33, 150, 243, 0.2);
+}
+
+.intro-header {
+    background: linear-gradient(135deg, #2196f3, #1976d2);
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.intro-header:hover {
+    background: linear-gradient(135deg, #1976d2, #1565c0);
+}
+
+.intro-arrow {
+    transition: transform 0.3s;
+    font-size: 18px;
+}
+
+.intro-arrow.open {
+    transform: rotate(180deg);
+}
+
+.intro-content {
+    display: none;
+    padding: 0;
+    background: white;
+}
+
+.intro-content.open {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+.intro-text {
+    padding: 25px;
+}
+
+.intro-text h4 {
+    color: #1976d2;
+    margin: 20px 0 10px 0;
+    font-size: 16px;
+}
+
+.intro-text ul {
+    margin: 10px 0 10px 20px;
+    line-height: 1.6;
+}
+
+.intro-text li {
+    margin: 8px 0;
+}
+
+.intro-highlight {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
+/* Styles glossaires */
+.glossary-dropdown {
+    background: linear-gradient(135deg, #f1f8e9, #e8f5e8);
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    margin: 30px 0 20px 0;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.2);
+}
+
+.glossary-header {
+    background: linear-gradient(135deg, #4caf50, #388e3c);
+    color: white;
+    padding: 15px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.glossary-header:hover {
+    background: linear-gradient(135deg, #388e3c, #2e7d32);
+}
+
+.glossary-arrow {
+    transition: transform 0.3s;
+    font-size: 18px;
+}
+
+.glossary-arrow.open {
+    transform: rotate(180deg);
+}
+
+.glossary-content {
+    display: none;
+    padding: 0;
+    background: white;
+}
+
+.glossary-content.open {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+.glossary-terms, .glossary-situations, .glossary-resources, .glossary-validation {
+    padding: 20px 25px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.glossary-validation {
+    border-bottom: none;
+    background: #f9f9f9;
+}
+
+.terms-list {
+    margin: 15px 0;
+}
+
+.terms-list dt {
+    font-weight: bold;
+    color: #2e7d32;
+    margin: 10px 0 5px 0;
+}
+
+.terms-list dd {
+    margin: 0 0 10px 20px;
+    color: #424242;
+    font-style: italic;
+}
+
+.situation-card {
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.resource-list {
+    margin: 15px 0;
+    list-style: none;
+    padding: 0;
+}
+
+.resource-list li {
+    margin: 8px 0;
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.resource-list a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.resource-list a:hover {
+    text-decoration: underline;
+}
+
+.validation-text {
+    background: #e3f2fd;
+    border: 1px solid #2196f3;
+    padding: 15px;
+    border-radius: 8px;
+    font-style: italic;
+    margin: 10px 0;
 }

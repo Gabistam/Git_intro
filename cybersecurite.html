@@ -60,7 +60,34 @@
         <!-- Section 1: DICP et cadre légal -->
         <div id="dicp" class="section">
             <h2>🔍 Comprendre les enjeux : DICP et cadre légal</h2>
-            
+
+            <div class="intro-dropdown">
+                <div class="intro-header" onclick="toggleIntro(1)">
+                    💡 Points-clés avant de commencer : Comprendre le RGPD concrètement
+                    <span class="intro-arrow">▼</span>
+                </div>
+                <div id="intro1" class="intro-content">
+                    <div class="intro-text">
+                        <p><strong>🎯 Objectif :</strong> Maîtriser les obligations légales pour éviter les amendes et protéger les utilisateurs.</p>
+
+                        <h4>⚡ Points-clés à retenir :</h4>
+                        <ul>
+                            <li><strong>Donnée personnelle</strong> = tout ce qui identifie une personne : email, IP, cookies, photo, nom+prénom, même l'âge si associé à autre chose</li>
+                            <li><strong>Sanctions réelles</strong> : jusqu'à 20M€ ou 4% du chiffre d'affaires (Google : 50M€ d'amende en 2019)</li>
+                            <li><strong>Consentement pas toujours obligatoire</strong> : nécessaire pour marketing, pas pour une commande légitime</li>
+                            <li><strong>Privacy by Design</strong> : sécuriser dès la conception, pas après coup</li>
+                        </ul>
+
+                        <h4>🔗 Dans votre métier :</h4>
+                        <p>Chaque formulaire, chaque base de données, chaque cookie que vous créez doit respecter le RGPD. Une seule faille peut coûter très cher à votre entreprise. Mieux vaut prévenir que payer des amendes !</p>
+
+                        <div class="intro-highlight">
+                            <strong>💰 Coût réel :</strong> Une violation RGPD coûte en moyenne 4.45M$ à une entreprise (étude IBM 2023), sans compter l'impact sur la réputation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <h3>Qu'est-ce que le DICP ?</h3>
             <div class="alert alert-info">
                 <div class="alert-icon">📋</div>
@@ -144,6 +171,65 @@
                 </div>
             </div>
 
+            <div class="glossary-dropdown">
+                <div class="glossary-header" onclick="toggleGlossary(1)">
+                    📚 Glossaire et ressources : RGPD et conformité
+                    <span class="glossary-arrow">▼</span>
+                </div>
+                <div id="glossary1" class="glossary-content">
+                    <div class="glossary-terms">
+                        <h4>🔑 Termes clés</h4>
+                        <dl class="terms-list">
+                            <dt>RGPD</dt>
+                            <dd>Règlement Général sur la Protection des Données - loi européenne obligatoire depuis 2018</dd>
+                            <dt>DICP</dt>
+                            <dd>Déclaration Informatique et Libertés - principe de base du respect de la vie privée</dd>
+                            <dt>Donnée personnelle</dt>
+                            <dd>Toute information permettant d'identifier une personne (email, IP, cookie, nom+prénom)</dd>
+                            <dt>Base légale</dt>
+                            <dd>Justification juridique pour traiter des données (consentement, contrat, intérêt légitime)</dd>
+                            <dt>DPO</dt>
+                            <dd>Data Protection Officer - responsable protection des données en entreprise</dd>
+                            <dt>Privacy by Design</dt>
+                            <dd>Intégrer la protection des données dès la conception, pas après coup</dd>
+                            <dt>Violation de données</dt>
+                            <dd>Fuite, perte ou accès non autorisé aux données personnelles</dd>
+                        </dl>
+                    </div>
+
+                    <div class="glossary-situations">
+                        <h4>🎯 En situation</h4>
+                        <div class="situation-card">
+                            <strong>Newsletter e-commerce :</strong> Case à cocher séparée pour marketing (≠ compte client)
+                            <br><em>Action :</em> Implémenter double opt-in + lien désinscription visible
+                        </div>
+                        <div class="situation-card">
+                            <strong>Faille découverte :</strong> Vol de 1000 emails clients par attaque SQL
+                            <br><em>Action :</em> Notifier CNIL sous 72h + informer les utilisateurs concernés
+                        </div>
+                        <div class="situation-card">
+                            <strong>Cookies analytics :</strong> Google Analytics sur site vitrine
+                            <br><em>Action :</em> Banner de consentement obligatoire + option refus fonctionnelle
+                        </div>
+                    </div>
+
+                    <div class="glossary-resources">
+                        <h4>🔗 Ressources officielles</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://cnil.fr" target="_blank">CNIL.fr</a> - Guide développeur RGPD français</li>
+                            <li><a href="https://gdpr.eu" target="_blank">GDPR.eu</a> - Texte complet en français</li>
+                            <li><a href="https://commission.europa.eu/law/law-topic/data-protection" target="_blank">Commission UE</a> - Ressources officielles européennes</li>
+                            <li><a href="https://ico.org.uk/for-organisations/guide-to-data-protection/" target="_blank">ICO UK</a> - Guides pratiques en anglais</li>
+                        </ul>
+                    </div>
+
+                    <div class="glossary-validation">
+                        <h4>✅ Je maîtrise si...</h4>
+                        <p class="validation-text">Je peux expliquer pourquoi collecter un email nécessite le consentement pour du marketing mais pas pour une commande, et je connais les 3 étapes obligatoires en cas de faille de données.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Quiz 1 -->
             <div class="quiz-container">
                 <div class="quiz-header" onclick="toggleQuiz(1)">
@@ -222,7 +308,34 @@
         <!-- Section 2: Sécurité vs Sûreté -->
         <div id="securite-surete" class="section">
             <h2>⚖️ Sécurité vs Sûreté : Ne plus confondre !</h2>
-            
+
+            <div class="intro-dropdown">
+                <div class="intro-header" onclick="toggleIntro(2)">
+                    💡 Points-clés avant de commencer : Distinguer les vrais problèmes
+                    <span class="intro-arrow">▼</span>
+                </div>
+                <div id="intro2" class="intro-content">
+                    <div class="intro-text">
+                        <p><strong>🎯 Objectif :</strong> Identifier rapidement si un problème vient d'une attaque ou d'un accident pour choisir la bonne solution.</p>
+
+                        <h4>⚡ Points-clés à retenir :</h4>
+                        <ul>
+                            <li><strong>Sécurité (Security)</strong> = protection contre les méchants (hackers, pirates, attaques volontaires)</li>
+                            <li><strong>Sûreté (Safety)</strong> = protection contre les accidents (bugs, pannes, erreurs humaines)</li>
+                            <li><strong>Méthode de reconnaissance</strong> : Y a-t-il eu intention de nuire ? Si oui → Sécurité, sinon → Sûreté</li>
+                            <li><strong>Cas mixtes fréquents</strong> : attaque réussie → provoque panne → problème devient aussi de sûreté</li>
+                        </ul>
+
+                        <h4>🔗 Dans votre métier :</h4>
+                        <p>Identifier correctement le type de problème vous fait gagner du temps et évite de chercher au mauvais endroit. Bug ou piratage ? La solution n'est pas la même !</p>
+
+                        <div class="intro-highlight">
+                            <strong>🚨 Exemple concret :</strong> Votre site plante à 14h30. Coïncidence suspecte ou pic de trafic normal ? Vérifiez d'abord les logs d'attaque avant de scaler les serveurs.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="security-safety-diagram">
                 <div class="circle security">
                     <div style="font-size: 24px;">🛡️</div>
@@ -276,6 +389,61 @@
                     <strong>Astuce mnémotechnique :</strong> 
                     <br>🛡️ <strong>SÉCURITÉ</strong> = Se protéger des <strong>méchants</strong> (hackers)
                     <br>🔧 <strong>SÛRETÉ</strong> = Se protéger des <strong>accidents</strong> (bugs, pannes)
+                </div>
+            </div>
+
+            <div class="glossary-dropdown">
+                <div class="glossary-header" onclick="toggleGlossary(2)">
+                    📚 Glossaire et ressources : Management des risques
+                    <span class="glossary-arrow">▼</span>
+                </div>
+                <div id="glossary2" class="glossary-content">
+                    <div class="glossary-terms">
+                        <h4>🔑 Termes clés</h4>
+                        <dl class="terms-list">
+                            <dt>Security (Sécurité)</dt>
+                            <dd>Protection contre les attaques intentionnelles et malveillantes</dd>
+                            <dt>Safety (Sûreté)</dt>
+                            <dd>Protection contre les dysfonctionnements et erreurs accidentelles</dd>
+                            <dt>Threat (Menace)</dt>
+                            <dd>Source potentielle de danger (hacker, virus, erreur humaine)</dd>
+                            <dt>Vulnerability (Vulnérabilité)</dt>
+                            <dd>Faiblesse exploitable dans un système (faille de code, config incorrecte)</dd>
+                            <dt>Incident Response</dt>
+                            <dd>Procédure organisée de réaction face à un problème de sécurité</dd>
+                            <dt>MTTR</dt>
+                            <dd>Mean Time To Recovery - temps moyen pour résoudre un incident</dd>
+                            <dt>Risk Assessment</dt>
+                            <dd>Évaluation systématique des risques (probabilité × impact)</dd>
+                        </dl>
+                    </div>
+
+                    <div class="glossary-situations">
+                        <h4>🎯 En situation</h4>
+                        <div class="situation-card">
+                            <strong>Site inaccessible 14h :</strong> Pic trafic naturel ou attaque DDoS ?
+                            <br><em>Action :</em> Vérifier logs d'attaque AVANT de scaler les serveurs
+                        </div>
+                        <div class="situation-card">
+                            <strong>Données corrompues :</strong> Bug de migration ou intrusion malveillante ?
+                            <br><em>Action :</em> Isoler système + analyse forensique + restauration selon la cause
+                        </div>
+                    </div>
+
+                    <div class="glossary-resources">
+                        <h4>🔗 Ressources méthodologiques</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://cyber.gouv.fr" target="_blank">ANSSI</a> - Méthodes d'analyse de risque françaises</li>
+                            <li><a href="https://nist.gov/cyberframework" target="_blank">NIST Framework</a> - Standard américain de cybersécurité</li>
+                            <li><a href="https://iso27001security.com" target="_blank">ISO 27001</a> - Norme internationale management sécurité</li>
+                            <li><a href="https://first.org" target="_blank">FIRST.org</a> - Forum international incident response</li>
+                        </ul>
+                    </div>
+
+                    <div class="glossary-validation">
+                        <h4>✅ Je maîtrise si...</h4>
+                        <p class="validation-text">Face à un problème technique, je peux déterminer en moins de 5 minutes s'il s'agit d'un problème de sécurité ou de sûreté et adapter ma réponse en conséquence.</p>
+                    </div>
                 </div>
             </div>
 
@@ -357,7 +525,34 @@
         <!-- Section 3: Les 4 types de risques -->
         <div id="risques" class="section">
             <h2>🎯 Les 4 types de risques à connaître</h2>
-            
+
+            <div class="intro-dropdown">
+                <div class="intro-header" onclick="toggleIntro(3)">
+                    💡 Points-clés avant de commencer : Prioriser les vrais dangers
+                    <span class="intro-arrow">▼</span>
+                </div>
+                <div id="intro3" class="intro-content">
+                    <div class="intro-text">
+                        <p><strong>🎯 Objectif :</strong> Classer les risques par priorité pour savoir lesquels traiter en premier avec un budget limité.</p>
+
+                        <h4>⚡ Points-clés à retenir :</h4>
+                        <ul>
+                            <li><strong>Intentionnels</strong> = hackers, virus, vols (ex: injection SQL) → Solutions : firewalls, chiffrement</li>
+                            <li><strong>Accidentels</strong> = erreurs humaines, pannes (ex: suppression involontaire) → Solutions : sauvegardes, formations</li>
+                            <li><strong>Réglementaires</strong> = non-conformité RGPD (ex: pas de désinscription newsletter) → Solutions : procédures légales</li>
+                            <li><strong>Opérationnels</strong> = impact business (ex: site lent = clients perdus) → Solutions : performance, monitoring</li>
+                        </ul>
+
+                        <h4>🔗 Dans votre métier :</h4>
+                        <p>Impossible de tout sécuriser à 100%. Il faut prioriser selon la matrice : Impact élevé + Probabilité élevée = À traiter en PREMIER.</p>
+
+                        <div class="intro-highlight">
+                            <strong>💰 Chiffres industrie :</strong> Coût moyen d'une faille : 4.45M$. Temps moyen pour détecter une intrusion : 287 jours. 95% des violations réussies viennent d'erreurs humaines.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="risk-mindmap">
                 <div class="risk-card risk-intentional">
                     <div class="risk-icon">🎭</div>
@@ -459,6 +654,61 @@
                 </div>
             </div>
 
+            <div class="glossary-dropdown">
+                <div class="glossary-header" onclick="toggleGlossary(3)">
+                    📚 Glossaire et ressources : Classification des risques
+                    <span class="glossary-arrow">▼</span>
+                </div>
+                <div id="glossary3" class="glossary-content">
+                    <div class="glossary-terms">
+                        <h4>🔑 Termes clés</h4>
+                        <dl class="terms-list">
+                            <dt>OWASP Top 10</dt>
+                            <dd>Liste des 10 vulnérabilités web les plus critiques, mise à jour tous les 3-4 ans</dd>
+                            <dt>Cyber Kill Chain</dt>
+                            <dd>Modèle décrivant les 7 étapes d'une cyberattaque (reconnaissance → actions)</dd>
+                            <dt>Attack Surface</dt>
+                            <dd>Ensemble des points d'entrée potentiels pour un attaquant</dd>
+                            <dt>Zero-day</dt>
+                            <dd>Vulnérabilité inconnue des éditeurs, donc sans correctif disponible</dd>
+                            <dt>APT</dt>
+                            <dd>Advanced Persistent Threat - attaque sophistiquée et longue durée</dd>
+                            <dt>Impact Business</dt>
+                            <dd>Conséquences financières et opérationnelles d'un incident de sécurité</dd>
+                            <dt>RTO/RPO</dt>
+                            <dd>Recovery Time/Point Objective - temps max d'arrêt et perte de données acceptable</dd>
+                        </dl>
+                    </div>
+
+                    <div class="glossary-situations">
+                        <h4>🎯 En situation</h4>
+                        <div class="situation-card">
+                            <strong>Audit de risques startup :</strong> Budget limité, prioriser les investissements sécurité
+                            <br><em>Action :</em> Matrice impact/probabilité → traiter d'abord risques ROUGES (élevé/élevé)
+                        </div>
+                        <div class="situation-card">
+                            <strong>Incident e-commerce :</strong> Faille XSS découverte pendant les soldes
+                            <br><em>Action :</em> Évaluer si correction immédiate (site down) ou protection temporaire (WAF)
+                        </div>
+                    </div>
+
+                    <div class="glossary-resources">
+                        <h4>🔗 Ressources spécialisées</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top 10</a> - Vulnérabilités web critiques</li>
+                            <li><a href="https://attack.mitre.org" target="_blank">MITRE ATT&CK</a> - Base de données techniques d'attaque</li>
+                            <li><a href="https://nvd.nist.gov" target="_blank">CVE Database</a> - Vulnérabilités référencées officiellement</li>
+                            <li><a href="https://clusif.fr" target="_blank">CLUSIF</a> - Club français sécurité des systèmes d'information</li>
+                        </ul>
+                    </div>
+
+                    <div class="glossary-validation">
+                        <h4>✅ Je maîtrise si...</h4>
+                        <p class="validation-text">Je peux classer 5 incidents différents selon les 4 types de risques et justifier l'ordre de priorité de traitement selon une matrice impact/probabilité.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Quiz 3 -->
             <div class="quiz-container">
                 <div class="quiz-header" onclick="toggleQuiz(3)">
@@ -537,6 +787,33 @@
         <!-- Section 4: Sécurité par profil développeur -->
         <div id="profils" class="section">
             <h2>👨‍💻 Sécurité selon votre profil développeur</h2>
+
+            <div class="intro-dropdown">
+                <div class="intro-header" onclick="toggleIntro(4)">
+                    💡 Points-clés avant de commencer : Votre rôle, vos responsabilités
+                    <span class="intro-arrow">▼</span>
+                </div>
+                <div id="intro4" class="intro-content">
+                    <div class="intro-text">
+                        <p><strong>🎯 Objectif :</strong> Identifier vos responsabilités sécurité selon votre spécialisation et savoir quels outils maîtriser en priorité.</p>
+
+                        <h4>⚡ Points-clés à retenir :</h4>
+                        <ul>
+                            <li><strong>Front-End</strong> : votre ennemi n°1 = XSS. Outils essentiels : extensions ESLint Security, CSP Evaluator</li>
+                            <li><strong>Back-End</strong> : votre ennemi n°1 = Injection SQL. Outils essentiels : ORM sécurisés, bcrypt, logs monitoring</li>
+                            <li><strong>Fullstack</strong> : vision globale obligatoire. Outils essentiels : OWASP ZAP, JWT libs, Docker security</li>
+                            <li><strong>Progression</strong> : 1ère année → bases (HTTPS, hachage), 2ème année → intermédiaire (JWT, API), entreprise → expert (architecture, audit)</li>
+                        </ul>
+
+                        <h4>🔗 Dans votre métier :</h4>
+                        <p>Chaque spécialisation a ses vulnérabilités typiques. Maîtriser celles de VOTRE profil vous rend immédiatement plus employable et évite les erreurs de débutant.</p>
+
+                        <div class="intro-highlight">
+                            <strong>🆘 Aide rapide :</strong> Front → MDN Web Security, Stack Overflow [javascript] [security] | Back → OWASP PHP Guide, Reddit r/webdev | Full → DevSecOps Discord, GitHub security advisories
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="alert alert-info">
                 <div class="alert-icon">💡</div>
@@ -687,6 +964,65 @@ app.get('/api/users',
                 </div>
             </div>
 
+            <div class="glossary-dropdown">
+                <div class="glossary-header" onclick="toggleGlossary(4)">
+                    📚 Glossaire et ressources : DevSecOps et spécialisations
+                    <span class="glossary-arrow">▼</span>
+                </div>
+                <div id="glossary4" class="glossary-content">
+                    <div class="glossary-terms">
+                        <h4>🔑 Termes clés</h4>
+                        <dl class="terms-list">
+                            <dt>DevSecOps</dt>
+                            <dd>Intégration de la sécurité dans tout le cycle DevOps (Dev + Security + Operations)</dd>
+                            <dt>Shift Left Security</dt>
+                            <dd>Intégrer les tests de sécurité le plus tôt possible dans le développement</dd>
+                            <dt>SAST</dt>
+                            <dd>Static Application Security Testing - analyse du code source sans l'exécuter</dd>
+                            <dt>DAST</dt>
+                            <dd>Dynamic Application Security Testing - test de l'application en fonctionnement</dd>
+                            <dt>SCA</dt>
+                            <dd>Software Composition Analysis - audit des dépendances et librairies tierces</dd>
+                            <dt>Secure Code Review</dt>
+                            <dd>Relecture de code axée sur la recherche de vulnérabilités</dd>
+                            <dt>Threat Modeling</dt>
+                            <dd>Analyse structurée des menaces potentielles sur une architecture</dd>
+                        </dl>
+                    </div>
+
+                    <div class="glossary-situations">
+                        <h4>🎯 En situation</h4>
+                        <div class="situation-card">
+                            <strong>Recrutement dev :</strong> Candidat fullstack, évaluer niveau sécurité
+                            <br><em>Action :</em> Questions pratiques sur OWASP Top 10 + code review d'exemple vulnérable
+                        </div>
+                        <div class="situation-card">
+                            <strong>Formation équipe :</strong> 5 développeurs, améliorer pratiques sécurité
+                            <br><em>Action :</em> Workshop OWASP + mise en place pipeline DevSecOps progressif
+                        </div>
+                        <div class="situation-card">
+                            <strong>Code review :</strong> Nouvelle fonctionnalité avant production
+                            <br><em>Action :</em> Checklist sécurité + scan SAST automatique + test manuel DAST
+                        </div>
+                    </div>
+
+                    <div class="glossary-resources">
+                        <h4>🔗 Ressources par spécialisation</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Security" target="_blank">MDN Web Security</a> - Guide sécurité front-end</li>
+                            <li><a href="https://cheatsheetseries.owasp.org" target="_blank">OWASP Cheat Sheets</a> - Antisèches sécurité par techno</li>
+                            <li><a href="https://portswigger.net/web-security" target="_blank">PortSwigger Academy</a> - Labs pratiques sécurité web</li>
+                            <li><a href="https://github.com/shieldfy/API-Security-Checklist" target="_blank">API Security Checklist</a> - Checklist sécurité API</li>
+                        </ul>
+                    </div>
+
+                    <div class="glossary-validation">
+                        <h4>✅ Je maîtrise si...</h4>
+                        <p class="validation-text">Je peux expliquer la différence entre SAST et DAST, identifier 3 vulnérabilités dans un code d'exemple, et mettre en place un pipeline DevSecOps basique avec au moins 2 outils automatisés.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Quiz 4 -->
             <div class="quiz-container">
                 <div class="quiz-header" onclick="toggleQuiz(4)">
@@ -765,7 +1101,34 @@ app.get('/api/users',
         <!-- Section 5: Timeline d'une cyberattaque -->
         <div id="attaque" class="section">
             <h2>⏱️ Timeline d'une cyberattaque : Attaque XSS</h2>
-            
+
+            <div class="intro-dropdown">
+                <div class="intro-header" onclick="toggleIntro(5)">
+                    💡 Points-clés avant de commencer : Anatomie d'une attaque réelle
+                    <span class="intro-arrow">▼</span>
+                </div>
+                <div id="intro5" class="intro-content">
+                    <div class="intro-text">
+                        <p><strong>🎯 Objectif :</strong> Comprendre comment les hackers procèdent pour mieux anticiper et détecter les attaques sur vos applications.</p>
+
+                        <h4>⚡ Points-clés à retenir :</h4>
+                        <ul>
+                            <li><strong>3 types XSS</strong> : Réfléchi (immédiat), Stocké (persistant = plus dangereux), DOM-based (côté client)</li>
+                            <li><strong>4 étapes d'attaque</strong> : Reconnaissance → Injection → Stockage → Exécution chez les victimes</li>
+                            <li><strong>Détection en cours</strong> : chercher dans logs Apache/Nginx les patterns "&lt;script&gt;", "javascript:", "onerror="</li>
+                            <li><strong>Point critique</strong> : étape 3 (stockage) = dernier moment pour bloquer avant que tous les visiteurs soient infectés</li>
+                        </ul>
+
+                        <h4>🔗 Dans votre métier :</h4>
+                        <p>Connaître le processus d'attaque vous permet de placer les bonnes protections aux bons endroits. Chaque étape peut être bloquée avec la bonne technique.</p>
+
+                        <div class="intro-highlight">
+                            <strong>🚨 Surveillance :</strong> grep "&lt;script" /var/log/apache2/access.log = recherche rapide d'tentatives XSS dans vos logs serveur. À automatiser !
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="alert alert-warning">
                 <div class="alert-icon">⚠️</div>
                 <div>
@@ -850,6 +1213,67 @@ echo "Bonjour " . htmlspecialchars($_POST['nom'], ENT_QUOTES, 'UTF-8');
                 </div>
             </div>
 
+            <div class="glossary-dropdown">
+                <div class="glossary-header" onclick="toggleGlossary(5)">
+                    📚 Glossaire et ressources : Attaques web et détection
+                    <span class="glossary-arrow">▼</span>
+                </div>
+                <div id="glossary5" class="glossary-content">
+                    <div class="glossary-terms">
+                        <h4>🔑 Termes clés</h4>
+                        <dl class="terms-list">
+                            <dt>XSS (Cross-Site Scripting)</dt>
+                            <dd>Injection de code JavaScript malveillant dans une page web</dd>
+                            <dt>Payload</dt>
+                            <dd>Code malveillant injecté par l'attaquant (ex: &lt;script&gt;alert('XSS')&lt;/script&gt;)</dd>
+                            <dt>Sanitization</dt>
+                            <dd>Nettoyage des données utilisateur pour supprimer les éléments dangereux</dd>
+                            <dt>CSP (Content Security Policy)</dt>
+                            <dd>Header HTTP qui contrôle quels scripts/styles peuvent s'exécuter</dd>
+                            <dt>DOM-based XSS</dt>
+                            <dd>XSS qui se produit entièrement côté client via manipulation du DOM</dd>
+                            <dt>Reflected XSS</dt>
+                            <dd>XSS immédiat renvoyé dans la réponse serveur (non stocké)</dd>
+                            <dt>Stored XSS</dt>
+                            <dd>XSS persistant stocké en base de données (plus dangereux)</dd>
+                            <dt>WAF</dt>
+                            <dd>Web Application Firewall - filtre les requêtes HTTP malveillantes</dd>
+                        </dl>
+                    </div>
+
+                    <div class="glossary-situations">
+                        <h4>🎯 En situation</h4>
+                        <div class="situation-card">
+                            <strong>Audit de sécurité :</strong> Tester application web client avant mise en prod
+                            <br><em>Action :</em> Tests XSS manuels + scan OWASP ZAP + vérification CSP headers
+                        </div>
+                        <div class="situation-card">
+                            <strong>Incident détecté :</strong> Logs montrent tentatives XSS sur formulaire contact
+                            <br><em>Action :</em> Analyser pattern d'attaque + renforcer validation + alerter équipe
+                        </div>
+                        <div class="situation-card">
+                            <strong>Bug bounty :</strong> Chercheur sécurité signale faille XSS stockée
+                            <br><em>Action :</em> Reproduire faille + corriger + tester + récompenser chercheur
+                        </div>
+                    </div>
+
+                    <div class="glossary-resources">
+                        <h4>🔗 Ressources techniques</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://owasp.org/www-community/attacks/xss/" target="_blank">OWASP XSS Guide</a> - Guide complet attaques XSS</li>
+                            <li><a href="https://csp-evaluator.withgoogle.com" target="_blank">CSP Evaluator</a> - Outil Google validation CSP</li>
+                            <li><a href="https://github.com/swisskyrepo/PayloadsAllTheThings" target="_blank">Payloads Database</a> - Base de données payloads d'attaque</li>
+                            <li><a href="https://portswigger.net/burp" target="_blank">Burp Suite</a> - Outil professionnel test sécurité web</li>
+                        </ul>
+                    </div>
+
+                    <div class="glossary-validation">
+                        <h4>✅ Je maîtrise si...</h4>
+                        <p class="validation-text">Je peux identifier les 3 types de XSS dans du code, configurer un CSP basique, et expliquer pourquoi innerHTML est dangereux alors que textContent est sûr.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Quiz 5 -->
             <div class="quiz-container">
                 <div class="quiz-header" onclick="toggleQuiz(5)">
@@ -928,7 +1352,34 @@ echo "Bonjour " . htmlspecialchars($_POST['nom'], ENT_QUOTES, 'UTF-8');
         <!-- Section 6: Mise en pratique - Cas e-commerce -->
         <div id="pratique" class="section">
             <h2>🛒 Mise en pratique : Cas d'usage e-commerce</h2>
-            
+
+            <div class="intro-dropdown">
+                <div class="intro-header" onclick="toggleIntro(6)">
+                    💡 Points-clés avant de commencer : Sécuriser un vrai projet
+                    <span class="intro-arrow">▼</span>
+                </div>
+                <div id="intro6" class="intro-content">
+                    <div class="intro-text">
+                        <p><strong>🎯 Objectif :</strong> Appliquer toutes les bonnes pratiques sur un projet concret en respectant un budget et des priorités réalistes.</p>
+
+                        <h4>⚡ Points-clés à retenir :</h4>
+                        <ul>
+                            <li><strong>Architecture sécurisée</strong> : Utilisateur → HTTPS → Front (XSS protection) → API (Auth + Rate limit) → Back (SQL protection) → BDD chiffrée</li>
+                            <li><strong>Ordre de priorité</strong> : 1) HTTPS + mots de passe hachés, 2) Protection injection + XSS, 3) API sécurisée, 4) Monitoring</li>
+                            <li><strong>Budget réaliste</strong> : HTTPS gratuit (Let's Encrypt), PSP (Stripe 2.9%), monitoring gratuit (Grafana), serveur sécurisé (+20% coût)</li>
+                            <li><strong>Paiements</strong> : JAMAIS stocker les CB ! Toujours déléguer à Stripe/PayPal/Adyen</li>
+                        </ul>
+
+                        <h4>🔗 Dans votre métier :</h4>
+                        <p>Un e-commerce combine tous les défis : données personnelles, paiements, performance, disponibilité. Réussir ce cas d'usage vous prépare à 80% des projets web.</p>
+
+                        <div class="intro-highlight">
+                            <strong>💡 Astuce budget :</strong> Commencer simple (Let's Encrypt + Stripe + hébergement sécurisé) coûte &lt;100€/mois. Évolutif selon le succès !
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="alert alert-info">
                 <div class="alert-icon">🎯</div>
                 <div>
@@ -1104,6 +1555,65 @@ if ($userData && password_verify($pass, $userData['password_hash'])) {
                 </div>
             </div>
 
+            <div class="glossary-dropdown">
+                <div class="glossary-header" onclick="toggleGlossary(6)">
+                    📚 Glossaire et ressources : Sécurité e-commerce et paiements
+                    <span class="glossary-arrow">▼</span>
+                </div>
+                <div id="glossary6" class="glossary-content">
+                    <div class="glossary-terms">
+                        <h4>🔑 Termes clés</h4>
+                        <dl class="terms-list">
+                            <dt>PCI-DSS</dt>
+                            <dd>Payment Card Industry Data Security Standard - norme sécurité pour cartes bancaires</dd>
+                            <dt>PSP</dt>
+                            <dd>Payment Service Provider - prestataire de paiement (Stripe, PayPal, Adyen)</dd>
+                            <dt>TLS/SSL</dt>
+                            <dd>Transport Layer Security - protocole de chiffrement HTTPS</dd>
+                            <dt>Rate Limiting</dt>
+                            <dd>Limitation du nombre de requêtes par utilisateur/IP pour éviter abus</dd>
+                            <dt>Session Management</dt>
+                            <dd>Gestion sécurisée des sessions utilisateur (cookies, tokens)</dd>
+                            <dt>Input Validation</dt>
+                            <dd>Vérification et nettoyage de toutes les données utilisateur</dd>
+                            <dt>3D Secure</dt>
+                            <dd>Protocole d'authentification forte pour paiements en ligne</dd>
+                        </dl>
+                    </div>
+
+                    <div class="glossary-situations">
+                        <h4>🎯 En situation</h4>
+                        <div class="situation-card">
+                            <strong>Startup e-commerce :</strong> Choix solution paiement, budget 10k€
+                            <br><em>Action :</em> Stripe (2.9% + simple) vs solution bancaire (1.5% + complexe PCI-DSS)
+                        </div>
+                        <div class="situation-card">
+                            <strong>Audit conformité :</strong> Client B2B exige certification sécurité
+                            <br><em>Action :</em> Scan OWASP ZAP + test SSL Labs + audit code + documentation conformité
+                        </div>
+                        <div class="situation-card">
+                            <strong>Black Friday :</strong> Préparer montée en charge + sécurité renforcée
+                            <br><em>Action :</em> Load testing + rate limiting adaptatif + monitoring 24/7 + WAF
+                        </div>
+                    </div>
+
+                    <div class="glossary-resources">
+                        <h4>🔗 Ressources spécialisées</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://pcisecuritystandards.org" target="_blank">PCI Council</a> - Standards sécurité paiements</li>
+                            <li><a href="https://stripe.com/docs/security" target="_blank">Stripe Security</a> - Documentation sécurité PSP</li>
+                            <li><a href="https://ssllabs.com/ssltest/" target="_blank">SSL Labs</a> - Test gratuit qualité HTTPS</li>
+                            <li><a href="https://securityheaders.com" target="_blank">Security Headers</a> - Vérification headers sécurité</li>
+                        </ul>
+                    </div>
+
+                    <div class="glossary-validation">
+                        <h4>✅ Je maîtrise si...</h4>
+                        <p class="validation-text">Je peux expliquer pourquoi on ne stocke jamais de numéros de carte, configurer un rate limiting efficace, et choisir entre PSP et solution bancaire selon le contexte business.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Quiz 6 -->
             <div class="quiz-container">
                 <div class="quiz-header" onclick="toggleQuiz(6)">
@@ -1182,7 +1692,34 @@ if ($userData && password_verify($pass, $userData['password_hash'])) {
         <!-- Section 7: Checklists par profil -->
         <div id="checklists" class="section">
             <h2>📋 Checklists pratiques par profil</h2>
-            
+
+            <div class="intro-dropdown">
+                <div class="intro-header" onclick="toggleIntro(7)">
+                    💡 Points-clés avant de commencer : Valider avant la mise en prod
+                    <span class="intro-arrow">▼</span>
+                </div>
+                <div id="intro7" class="intro-content">
+                    <div class="intro-text">
+                        <p><strong>🎯 Objectif :</strong> Avoir une checklist systématique pour ne rien oublier avant de mettre en production et savoir comment vérifier chaque point.</p>
+
+                        <h4>⚡ Points-clés à retenir :</h4>
+                        <ul>
+                            <li><strong>Priorité ROUGE (critique)</strong> : HTTPS, mots de passe hachés, requêtes préparées, sessions sécurisées → Si manquant = ne pas déployer</li>
+                            <li><strong>Priorité ORANGE (important)</strong> : CSP, rate limiting, logs propres, sauvegardes → Planifier rapidement</li>
+                            <li><strong>Priorité VERTE (amélioration)</strong> : monitoring avancé, tests auto, certifications → Évolution continue</li>
+                            <li><strong>Outils de vérification</strong> : SSL Labs (HTTPS), CSP Evaluator (Google), npm audit (dépendances), Lighthouse (globale)</li>
+                        </ul>
+
+                        <h4>🔗 Dans votre métier :</h4>
+                        <p>Une checklist systématique évite les oublis coûteux et rassure les clients/managers. C'est la différence entre un développeur junior et confirmé.</p>
+
+                        <div class="intro-highlight">
+                            <strong>🔗 Liens utiles :</strong> SSL Labs: ssllabs.com/ssltest | CSP Evaluator: csp-evaluator.withgoogle.com | Security Headers: securityheaders.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="alert alert-info">
                 <div class="alert-icon">📝</div>
                 <div>
@@ -1329,6 +1866,65 @@ if ($userData && password_verify($pass, $userData['password_hash'])) {
                 </div>
             </div>
 
+            <div class="glossary-dropdown">
+                <div class="glossary-header" onclick="toggleGlossary(7)">
+                    📚 Glossaire et ressources : Audit et validation sécurité
+                    <span class="glossary-arrow">▼</span>
+                </div>
+                <div id="glossary7" class="glossary-content">
+                    <div class="glossary-terms">
+                        <h4>🔑 Termes clés</h4>
+                        <dl class="terms-list">
+                            <dt>Security Headers</dt>
+                            <dd>En-têtes HTTP de sécurité (CSP, HSTS, X-Frame-Options, etc.)</dd>
+                            <dt>Vulnerability Scan</dt>
+                            <dd>Analyse automatisée recherchant les failles de sécurité connues</dd>
+                            <dt>Penetration Testing</dt>
+                            <dd>Test d'intrusion simulant une attaque réelle par un expert</dd>
+                            <dt>Security Baseline</dt>
+                            <dd>Configuration sécurisée standard servant de référence</dd>
+                            <dt>Hardening</dt>
+                            <dd>Durcissement d'un système en supprimant les services/configs inutiles</dd>
+                            <dt>Compliance</dt>
+                            <dd>Conformité aux normes et réglementations (RGPD, PCI-DSS, ISO 27001)</dd>
+                            <dt>Security Posture</dt>
+                            <dd>Niveau global de sécurité d'une organisation ou système</dd>
+                        </dl>
+                    </div>
+
+                    <div class="glossary-situations">
+                        <h4>🎯 En situation</h4>
+                        <div class="situation-card">
+                            <strong>Pre-prod validation :</strong> Application web avant mise en production
+                            <br><em>Action :</em> Checklist complète + scan OWASP ZAP + test SSL Labs + audit manuel
+                        </div>
+                        <div class="situation-card">
+                            <strong>Audit client :</strong> Grande entreprise exige rapport sécurité complet
+                            <br><em>Action :</em> Pentest externe + audit code + documentation conformité + plan correction
+                        </div>
+                        <div class="situation-card">
+                            <strong>Certification ISO :</strong> Entreprise vise certification ISO 27001
+                            <br><em>Action :</em> Gap analysis + mise en conformité + documentation processus + audit
+                        </div>
+                    </div>
+
+                    <div class="glossary-resources">
+                        <h4>🔗 Outils de validation</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://securityheaders.com" target="_blank">Security Headers</a> - Test headers sécurité HTTP</li>
+                            <li><a href="https://ssllabs.com/ssltest/" target="_blank">SSL Labs</a> - Audit qualité HTTPS/TLS</li>
+                            <li><a href="https://csp-evaluator.withgoogle.com" target="_blank">CSP Evaluator</a> - Validation Content Security Policy</li>
+                            <li><a href="https://owasp.org/www-project-zap/" target="_blank">OWASP ZAP</a> - Scanner sécurité gratuit</li>
+                        </ul>
+                    </div>
+
+                    <div class="glossary-validation">
+                        <h4>✅ Je maîtrise si...</h4>
+                        <p class="validation-text">Je peux utiliser 4 outils d'audit différents, interpréter leurs résultats, prioriser les corrections selon la criticité, et documenter le niveau de sécurité d'une application.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Quiz 7 -->
             <div class="quiz-container">
                 <div class="quiz-header" onclick="toggleQuiz(7)">
@@ -1407,7 +2003,40 @@ if ($userData && password_verify($pass, $userData['password_hash'])) {
         <!-- Section 8: Points clés et ressources -->
         <div id="ressources" class="section">
             <h2>💡 Points clés et ressources pour aller plus loin</h2>
-            
+
+            <div class="intro-dropdown">
+                <div class="intro-header" onclick="toggleIntro(8)">
+                    💡 Points-clés avant de commencer : Votre plan de progression
+                    <span class="intro-arrow">▼</span>
+                </div>
+                <div id="intro8" class="intro-content">
+                    <div class="intro-text">
+                        <p><strong>🎯 Objectif :</strong> Avoir une roadmap claire pour progresser en cybersécurité et savoir où chercher de l'aide selon votre budget.</p>
+
+                        <h4>⚡ Roadmap 6 mois :</h4>
+                        <ul>
+                            <li><strong>Mois 1-2</strong> : Bases (HTTPS, bcrypt, requêtes préparées, CSP basique)</li>
+                            <li><strong>Mois 3-4</strong> : Intermédiaire (JWT, OAuth2, CORS, rate limiting, OWASP ZAP)</li>
+                            <li><strong>Mois 5-6</strong> : Avancé (architecture sécurisée, monitoring, tests automatisés, certifications)</li>
+                        </ul>
+
+                        <h4>⚡ Ressources par budget :</h4>
+                        <ul>
+                            <li><strong>Gratuit</strong> : OWASP guides, Let's Encrypt, npm audit, Reddit r/netsec, YouTube (LiveOverflow)</li>
+                            <li><strong>Freemium</strong> : Snyk (scan gratuit limité), Coursera (1 mois gratuit), HackTheBox (niveaux gratuits)</li>
+                            <li><strong>Payant</strong> : Burp Suite Pro (399€/an), certifications (CEH 1200€, CISSP 800€), formations spécialisées</li>
+                        </ul>
+
+                        <h4>🔗 Dans votre métier :</h4>
+                        <p>La cybersécurité évolue constamment. Une veille organisée et un plan de formation vous maintiennent à jour et boostent votre employabilité.</p>
+
+                        <div class="intro-highlight">
+                            <strong>🤝 Communautés actives :</strong> Discord "The Cyber Mentor", Reddit r/AskNetsec, LinkedIn groupes cybersécurité, meetups locaux OWASP/CLUSIF
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <h3>🎯 Les 5 points essentiels à retenir</h3>
             <div class="flip-cards-container">
                 <div class="flip-card">
@@ -1567,6 +2196,67 @@ if ($userData && password_verify($pass, $userData['password_hash'])) {
                 <div class="alert-icon">🎓</div>
                 <div>
                     <strong>Préparation BTS SIO :</strong> Ce chapitre couvre les compétences <strong>B3.1</strong> (Protéger les données personnelles), <strong>B3.4</strong> (Garantir disponibilité/intégrité/confidentialité) et <strong>B3.5B</strong> (Cybersécurité applicative) pour l'épreuve <strong>E7 Cybersécurité</strong>.
+                </div>
+            </div>
+
+            <div class="glossary-dropdown">
+                <div class="glossary-header" onclick="toggleGlossary(8)">
+                    📚 Glossaire et ressources : Carrière et veille cybersécurité
+                    <span class="glossary-arrow">▼</span>
+                </div>
+                <div id="glossary8" class="glossary-content">
+                    <div class="glossary-terms">
+                        <h4>🔑 Termes clés</h4>
+                        <dl class="terms-list">
+                            <dt>PCA (Plan de Continuité d'Activité)</dt>
+                            <dd>Procédures pour maintenir l'activité en cas d'incident majeur</dd>
+                            <dt>PRA (Plan de Reprise d'Activité)</dt>
+                            <dd>Procédures pour redémarrer l'activité après un arrêt complet</dd>
+                            <dt>CTF</dt>
+                            <dd>Capture The Flag - compétitions de sécurité informatique ludiques</dd>
+                            <dt>Bug Bounty</dt>
+                            <dd>Programme de récompenses pour découverte de vulnérabilités</dd>
+                            <dt>Security Clearance</dt>
+                            <dd>Habilitation sécuritaire pour accéder à des informations sensibles</dd>
+                            <dt>SOC</dt>
+                            <dd>Security Operations Center - centre de surveillance sécurité 24/7</dd>
+                            <dt>Red Team / Blue Team</dt>
+                            <dd>Équipes d'attaque / défense pour exercices de cybersécurité</dd>
+                            <dt>Zero Trust</dt>
+                            <dd>Modèle sécurité "ne jamais faire confiance, toujours vérifier"</dd>
+                        </dl>
+                    </div>
+
+                    <div class="glossary-situations">
+                        <h4>🎯 En situation</h4>
+                        <div class="situation-card">
+                            <strong>Évolution carrière :</strong> Développeur → Expert cybersécurité
+                            <br><em>Action :</em> Certification CEH + participation CTF + contribution bug bounty + spécialisation
+                        </div>
+                        <div class="situation-card">
+                            <strong>Veille technologique :</strong> Rester à jour sur nouvelles menaces
+                            <br><em>Action :</em> Twitter infosec + Reddit r/netsec + newsletters SANS + conférences
+                        </div>
+                        <div class="situation-card">
+                            <strong>Formation continue :</strong> Budget 2000€/an formation sécurité
+                            <br><em>Action :</em> Mix certifications officielles + plateformes pratiques + conférences
+                        </div>
+                    </div>
+
+                    <div class="glossary-resources">
+                        <h4>🔗 Évolution professionnelle</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://hackthebox.eu" target="_blank">HackTheBox</a> - Plateforme d'entraînement pentest</li>
+                            <li><a href="https://sans.org" target="_blank">SANS Institute</a> - Formations cybersécurité premium</li>
+                            <li><a href="https://isc2.org" target="_blank">(ISC)² Certifications</a> - CISSP, CCSP et autres certifs</li>
+                            <li><a href="https://cybrary.it" target="_blank">Cybrary</a> - Formation cybersécurité gratuite</li>
+                        </ul>
+                    </div>
+
+                    <div class="glossary-validation">
+                        <h4>✅ Je maîtrise si...</h4>
+                        <p class="validation-text">Je peux expliquer la différence entre PCA et PRA, j'ai participé à au moins 1 CTF ou bug bounty, et j'ai un plan de formation cybersécurité sur 2 ans avec budget et objectifs précis.</p>
+                    </div>
                 </div>
             </div>
 
@@ -2091,6 +2781,34 @@ if ($userData && password_verify($pass, $userData['password_hash'])) {
 
         window.addEventListener('resize', handleMobile);
         handleMobile(); // Exécuter au chargement
+
+        // Fonction pour les intros déroulantes
+        function toggleIntro(introId) {
+            const content = document.getElementById(`intro${introId}`);
+            const arrow = content.previousElementSibling.querySelector('.intro-arrow');
+
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+            } else {
+                content.classList.add('open');
+                arrow.classList.add('open');
+            }
+        }
+
+        // Fonction pour les glossaires déroulants
+        function toggleGlossary(glossaryId) {
+            const content = document.getElementById(`glossary${glossaryId}`);
+            const arrow = content.previousElementSibling.querySelector('.glossary-arrow');
+
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+            } else {
+                content.classList.add('open');
+                arrow.classList.add('open');
+            }
+        }
 
         // Fonction d'aide contextuelle
         function showHelp(topic) {

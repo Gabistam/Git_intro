@@ -46,13 +46,53 @@ body {
     text-decoration: none;
     padding: 5px 15px;
     border-radius: 20px;
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     font-size: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
 }
 
 .nav-links a:hover {
     background: #3498db;
     color: white;
+    transform: translateY(-1px);
+}
+
+.nav-links a:hover::before {
+    left: 100%;
+}
+
+.nav-links a.active {
+    background: linear-gradient(135deg, #2980b9, #3498db);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 3px 12px rgba(41, 128, 185, 0.4);
+    transform: translateY(-2px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 /* Conteneur principal */
@@ -752,7 +792,10 @@ h3 {
     .container { padding: 80px 15px 20px; }
     .section { padding: 25px; margin: 20px 0; }
 
-    .nav-links { display: none; }
+    .nav-links {
+        display: none;
+        /* Masque la navigation sur mobile - peut être amélioré avec un menu hamburger */
+    }
 
     .hero-title { font-size: 2em; }
     .hero-subtitle { font-size: 1em; }

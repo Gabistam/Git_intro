@@ -13,7 +13,7 @@
             <div class="nav-title">🎓 Sécurité Web - BTS SIO</div>
             <div class="nav-links">
                 <a href="#objectifs">Objectifs</a>
-                <a href="#dicp">RGPD</a>
+                <a href="#dicp">RGPD/DICP</a>
                 <a href="#securite-surete">Sécurité/Sûreté</a>
                 <a href="#risques">Risques</a>
                 <a href="#profils">Profils</a>
@@ -57,69 +57,95 @@
             </div>
         </div>
 
-        <!-- Section 1: DICP et cadre légal -->
+        <!-- Section 1: RGPD et cadre légal -->
         <div id="dicp" class="section">
-            <h2>🔍 Comprendre les enjeux : DICP et cadre légal</h2>
+            <h2>🔍 Comprendre les enjeux : RGPD et cadre légal</h2>
 
             <div class="intro-dropdown">
                 <div class="intro-header" onclick="toggleIntro(1)">
-                    💡 Points-clés avant de commencer : Comprendre le RGPD concrètement
+                    💡 Points-clés avant de commencer : Comprendre le DICP/RGPD concrètement
                     <span class="intro-arrow">▼</span>
                 </div>
                 <div id="intro1" class="intro-content">
                     <div class="intro-text">
-                        <p><strong>🎯 Objectif :</strong> Maîtriser les obligations légales pour éviter les amendes et protéger les utilisateurs.</p>
+                        <p><strong>🎯 Objectif :</strong> Maîtriser les obligations légales françaises et européennes pour éviter les amendes et protéger les utilisateurs.</p>
+
+                        <h4>📋 Définitions essentielles :</h4>
+                        <ul>
+                            <li><strong>DICP (Déclaration Informatique et Libertés)</strong> = principe français de protection des données personnelles, issu de la loi de 1978, modernisé depuis 2018.</li>
+                            <li><strong>RGPD (Règlement Général sur la Protection des Données)</strong> = règlement européen obligatoire depuis 2018 dans les 27 pays de l'UE, qui harmonise la protection des données.</li>
+                            <li><strong>En pratique :</strong> DICP = RGPD appliqué en France avec la CNIL comme autorité de contrôle.</li>
+                        </ul>
 
                         <h4>⚡ Points-clés à retenir :</h4>
                         <ul>
                             <li><strong>Donnée personnelle</strong> = tout ce qui identifie une personne : email, IP, cookies, photo, nom+prénom, même l'âge si associé à autre chose</li>
-                            <li><strong>Sanctions réelles</strong> : jusqu'à 20M€ ou 4% du chiffre d'affaires (Google : 50M€ d'amende en 2019)</li>
+                            <li><strong>Sanctions réelles</strong> : jusqu'à 20M€ ou 4% du chiffre d'affaires (Google : 50M€ d'amende CNIL en 2019)</li>
                             <li><strong>Consentement pas toujours obligatoire</strong> : nécessaire pour marketing, pas pour une commande légitime</li>
                             <li><strong>Privacy by Design</strong> : sécuriser dès la conception, pas après coup</li>
+                            <li><strong>Autorité française</strong> : CNIL = votre interlocuteur direct pour toute question de conformité</li>
                         </ul>
 
                         <h4>🔗 Dans votre métier :</h4>
-                        <p>Chaque formulaire, chaque base de données, chaque cookie que vous créez doit respecter le RGPD. Une seule faille peut coûter très cher à votre entreprise. Mieux vaut prévenir que payer des amendes !</p>
+                        <p>Chaque formulaire, chaque base de données, chaque cookie que vous créez doit respecter le DICP/RGPD. Une seule faille peut coûter très cher à votre entreprise. La CNIL française est votre référence directe pour toute question de conformité.</p>
+
+                        <h4>💰 Coût réel :</h4>
+                        <p>Une violation RGPD coûte en moyenne 4.45M$ à une entreprise (étude IBM 2023), sans compter l'impact sur la réputation. En France, la CNIL a prononcé des amendes allant de 60 000€ (PME) à 90M€ (grandes entreprises).</p>
 
                         <div class="intro-highlight">
-                            <strong>💰 Coût réel :</strong> Une violation RGPD coûte en moyenne 4.45M$ à une entreprise (étude IBM 2023), sans compter l'impact sur la réputation.
+                            <strong>🎯 Message-clé :</strong><br>
+                            "DICP (France) et RGPD (Europe), c'est la même chose en pratique ! Vous respectez le RGPD = vous respectez le DICP. La CNIL est votre interlocuteur français pour toutes les questions de conformité. Focus sur : Privacy by Design + minimisation des données + consentement explicite pour le marketing."
                         </div>
                     </div>
                 </div>
             </div>
 
             <h3>Qu'est-ce que le DICP ?</h3>
-            <div class="alert alert-info">
-                <div class="alert-icon">📋</div>
-                <div>
-                    Le <strong>DICP</strong> (Déclaration Informatique et Libertés) est le principe selon lequel toute application qui traite des données personnelles doit respecter la loi.
-                </div>
-            </div>
 
-            <h3>Timeline du processus RGPD</h3>
+            <p>Le DICP (Droit à l'Information et Consentement Personnel) est l'ensemble des règles qui encadrent la collecte et l'utilisation des données personnelles.</p>
+
+            <h3>⏱️ Timeline du processus DICP/RGPD</h3>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>1. Consentement</h4>
-                        <p>L'utilisateur accepte explicitement le traitement de ses données personnelles</p>
+                        <h4>📋 1. Déclaration d'intention</h4>
+                        <p><strong>Définir la finalité :</strong> Documenter précisément pourquoi on collecte des données et sur quelle base légale</p>
+                        <small><em>Exemple : "Newsletter marketing" → Base légale : consentement explicite</em></small>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>2. Collecte</h4>
-                        <p>Récupération des données strictement nécessaires au service</p>
+                        <h4>🔒 2. Information et consentement</h4>
+                        <p><strong>Informer clairement :</strong> Expliquer ce qui sera collecté, pourquoi, combien de temps, et obtenir le consentement si nécessaire</p>
+                        <small><em>Exemple : Politique de confidentialité + case à cocher marketing séparée</em></small>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>3. Traitement</h4>
-                        <p>Utilisation des données selon les finalités déclarées</p>
+                        <h4>⚖️ 3. Collecte proportionnée</h4>
+                        <p><strong>Minimisation :</strong> Récupérer uniquement les données strictement nécessaires au service déclaré</p>
+                        <small><em>Exemple : Newsletter → email suffit (pas téléphone + adresse)</em></small>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h4>4. Exercice des droits</h4>
-                        <p>Accès, rectification, suppression à la demande</p>
+                        <h4>🛡️ 4. Traitement sécurisé</h4>
+                        <p><strong>Protection technique :</strong> Utiliser les données selon les finalités déclarées avec sécurité renforcée</p>
+                        <small><em>Exemple : Chiffrement + accès contrôlés + logs d'audit</em></small>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>👤 5. Exercice des droits</h4>
+                        <p><strong>Faciliter les demandes :</strong> Accès, rectification, suppression, portabilité - réponse sous 1 mois maximum</p>
+                        <small><em>Exemple : Formulaire contact + bouton "Supprimer mon compte" fonctionnel</em></small>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>📊 6. Contrôle et traçabilité</h4>
+                        <p><strong>Documentation continue :</strong> Registre des traitements, audit, capacité à prouver la conformité</p>
+                        <small><em>Exemple : Documentation processus + audit annuel + logs d'accès</em></small>
                     </div>
                 </div>
             </div>
@@ -181,19 +207,21 @@
                         <h4>🔑 Termes clés</h4>
                         <dl class="terms-list">
                             <dt>RGPD</dt>
-                            <dd>Règlement Général sur la Protection des Données - loi européenne obligatoire depuis 2018</dd>
+                            <dd>Règlement Général sur la Protection des Données - loi européenne obligatoire depuis 2018, applicable mondialement si traitement de données d'européens</dd>
                             <dt>DICP</dt>
-                            <dd>Déclaration Informatique et Libertés - principe de base du respect de la vie privée</dd>
+                            <dd>Droit à l'Information et Consentement Personnel - cadre légal français pour la protection des données</dd>
                             <dt>Donnée personnelle</dt>
-                            <dd>Toute information permettant d'identifier une personne (email, IP, cookie, nom+prénom)</dd>
+                            <dd>Toute information permettant d'identifier une personne directement ou indirectement (email, IP, cookie, nom+prénom, géolocalisation)</dd>
                             <dt>Base légale</dt>
-                            <dd>Justification juridique pour traiter des données (consentement, contrat, intérêt légitime)</dd>
-                            <dt>DPO</dt>
-                            <dd>Data Protection Officer - responsable protection des données en entreprise</dd>
+                            <dd>Justification juridique obligatoire pour traiter des données (consentement, contrat, intérêt légitime, mission de service public)</dd>
+                            <dt>DPO (Délégué à la Protection des Données)</dt>
+                            <dd>Responsable de la conformité RGPD en entreprise, obligatoire pour certaines organisations</dd>
                             <dt>Privacy by Design</dt>
-                            <dd>Intégrer la protection des données dès la conception, pas après coup</dd>
-                            <dt>Violation de données</dt>
-                            <dd>Fuite, perte ou accès non autorisé aux données personnelles</dd>
+                            <dd>Intégrer la protection des données dès la conception du système, pas après coup</dd>
+                            <dt>Violation de données (Data Breach)</dt>
+                            <dd>Fuite, perte ou accès non autorisé aux données personnelles - notification CNIL obligatoire sous 72h</dd>
+                            <dt>CNIL</dt>
+                            <dd>Commission Nationale de l'Informatique et des Libertés - autorité française de contrôle</dd>
                         </dl>
                     </div>
 
@@ -238,11 +266,11 @@
                 </div>
                 <div id="quiz1" class="quiz-content">
                     <div class="quiz-question">
-                        <div class="question-text">1. Que signifie DICP ?</div>
+                        <div class="question-text">1. Le RGPD s'applique à :</div>
                         <div class="quiz-options">
-                            <div class="quiz-option" onclick="selectAnswer(1, 1, false)">A) Déclaration d'Intérêt Commercial et Personnel</div>
-                            <div class="quiz-option" onclick="selectAnswer(1, 1, true)">B) Déclaration Informatique et Libertés</div>
-                            <div class="quiz-option" onclick="selectAnswer(1, 1, false)">C) Données Informatiques Confidentielles et Privées</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 1, false)">A) Uniquement aux entreprises européennes</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 1, true)">B) Toute organisation qui traite des données d'européens</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 1, false)">C) Seulement aux sites avec plus de 1000 visiteurs</div>
                         </div>
                         <div class="quiz-feedback">
                             <div class="feedback-text"></div>
@@ -2348,7 +2376,7 @@ if ($userData && password_verify($pass, $userData['password_hash'])) {
             1: [
                 {
                     correct: "B",
-                    explanation: "DICP signifie Déclaration Informatique et Libertés, principe de base du RGPD."
+                    explanation: "Le RGPD s'applique à toute organisation (même non-européenne) qui traite des données de citoyens européens."
                 },
                 {
                     correct: "B", 
@@ -2651,26 +2679,50 @@ if ($userData && password_verify($pass, $userData['password_hash'])) {
 
         // Fonction pour marquer la section active dans la navigation
         function updateActiveNav() {
-            const sections = document.querySelectorAll('.section');
+            const sections = document.querySelectorAll('.section, #objectifs');
             const navLinks = document.querySelectorAll('.nav-links a');
-            
-            window.addEventListener('scroll', () => {
+            const navHeight = document.querySelector('.nav-fixed').offsetHeight;
+
+            function highlightNavigation() {
                 let current = '';
+                const scrollPosition = window.pageYOffset + navHeight + 50;
+
+                // Vérifier chaque section pour déterminer laquelle est visible
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (window.pageYOffset >= sectionTop - 100) {
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                         current = section.getAttribute('id');
                     }
                 });
 
+                // Si on est tout en haut de la page, activer "Objectifs"
+                if (window.pageYOffset < 100) {
+                    current = 'objectifs';
+                }
+
+                // Mettre à jour les liens de navigation
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
+                    const href = link.getAttribute('href');
+                    if (href === `#${current}`) {
                         link.classList.add('active');
                     }
                 });
+            }
+
+            // Écouter le scroll avec throttling pour de meilleures performances
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                if (scrollTimeout) {
+                    cancelAnimationFrame(scrollTimeout);
+                }
+                scrollTimeout = requestAnimationFrame(highlightNavigation);
             });
+
+            // Appeler une fois au chargement
+            highlightNavigation();
         }
 
         // Fonction pour l'animation au scroll

